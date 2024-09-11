@@ -72,7 +72,7 @@ Kore.config = {
 ---@class KorePalette
 Kore.palette = {
   dark0_hard = "#1d1d1d",
-  dark0 = "#282828",
+  dark0 = "#1d1d1d", -- background
   dark0_soft = "#32302f",
   dark1 = "#3c3836",
   dark2 = "#504945",
@@ -91,7 +91,7 @@ Kore.palette = {
   bright_blue = "#83a598",
   bright_purple = "#d3869b",
   bright_aqua = "#8ec07c",
-  bright_orange = "#fe8019",
+  bright_orange = "#ffa666",
   neutral_red = "#ff7f66",
   neutral_green = "#aacd98",
   neutral_yellow = "#f2d98c",
@@ -132,10 +132,6 @@ local function get_colors()
   local p = Kore.palette
   local config = Kore.config
 
-  for color, hex in pairs(config.palette_overrides) do
-    p[color] = hex
-  end
-
   local bg = vim.o.background
   local contrast = config.contrast
 
@@ -168,46 +164,10 @@ local function get_colors()
       dark_green = p.dark_green,
       dark_aqua = p.dark_aqua,
       gray = p.gray,
-    },
-    light = {
-      bg0 = p.light0,
-      bg1 = p.light1,
-      bg2 = p.light2,
-      bg3 = p.light3,
-      bg4 = p.light4,
-      fg0 = p.dark0,
-      fg1 = p.dark1,
-      fg2 = p.dark2,
-      fg3 = p.dark3,
-      fg4 = p.dark4,
-      red = p.faded_red,
-      green = p.faded_green,
-      yellow = p.faded_yellow,
-      blue = p.faded_blue,
-      purple = p.faded_purple,
-      aqua = p.faded_aqua,
-      orange = p.faded_orange,
-      neutral_red = p.neutral_red,
-      neutral_green = p.neutral_green,
-      neutral_yellow = p.neutral_yellow,
-      neutral_blue = p.neutral_blue,
-      neutral_purple = p.neutral_purple,
-      neutral_aqua = p.neutral_aqua,
-      dark_red = p.light_red,
-      dark_green = p.light_green,
-      dark_aqua = p.light_aqua,
-      gray = p.gray,
-    },
+    }
   }
 
-  if contrast ~= nil and contrast ~= "" then
-    color_groups[bg].bg0 = p[bg .. "0_" .. contrast]
-    color_groups[bg].dark_red = p[bg .. "_red_" .. contrast]
-    color_groups[bg].dark_green = p[bg .. "_green_" .. contrast]
-    color_groups[bg].dark_aqua = p[bg .. "_aqua_" .. contrast]
-  end
-
-  return color_groups[bg]
+  return color_groups["dark"]
 end
 
 local function get_groups()
@@ -285,7 +245,7 @@ local function get_groups()
     KorePurpleUnderline = { undercurl = config.undercurl, sp = colors.purple },
     KoreAquaUnderline = { undercurl = config.undercurl, sp = colors.aqua },
     KoreOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange },
-    Normal = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg0 },
+    Normal = { fg = colors.fg1, bg = colors.bg0 },
     NormalFloat = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg1 },
     NormalNC = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 } or { link = "Normal" },
     CursorLine = { bg = colors.bg1 },
