@@ -68,24 +68,20 @@ Kore.config = {
   transparent_mode = false,
 }
 
--- main gruvbox color palette
+-- main kore color palette
 ---@class KorePalette
 Kore.palette = {
-  dark0_hard = "#1d1d1d",
-  dark0 = "#1d1d1d", -- background
-  dark0_soft = "#32302f",
-  dark1 = "#3c3836",
-  dark2 = "#504945",
-  dark3 = "#665c54",
-  dark4 = "#7c6f64",
-  light0_hard = "#f9f5d7",
-  light0 = "#fbf1c7",
-  light0_soft = "#f2e5bc",
-  light1 = "#ebdbb2",
-  light2 = "#d5c4a1",
-  light3 = "#bdae93",
-  light4 = "#a89984",
-  bright_red = "#fb4934",
+  dark_dark = "#1d1d1d", -- background
+  dark_normal = "#2d2d2d",
+  dark_light = "#444444",
+  dark3 = "#f2613f",
+  dark4 = "#f2613f",
+  light_dark = "#747474",
+  light_normal = "#b4b4b4",
+  light_light = "#e4e4e4",
+  light3 = "#ff0000",
+  light4 = "#ff0000",
+  ruby_normal = "#ff7f66",
   bright_green = "#b8bb26",
   bright_yellow = "#fabd2f",
   bright_blue = "#83a598",
@@ -137,17 +133,17 @@ local function get_colors()
 
   local color_groups = {
     dark = {
-      bg0 = p.dark0,
-      bg1 = p.dark1,
-      bg2 = p.dark2,
+      bg0 = p.dark_dark,
+      bg1 = p.dark_normal,
+      bg2 = p.dark_light,
       bg3 = p.dark3,
       bg4 = p.dark4,
-      fg0 = p.light0,
-      fg1 = p.light1,
-      fg2 = p.light2,
+      fg0 = p.light_dark,
+      fg1 = p.light_normal,
+      fg2 = p.light_light,
       fg3 = p.light3,
       fg4 = p.light4,
-      red = p.bright_red,
+      red = p.ruby_normal,
       green = p.bright_green,
       yellow = p.bright_yellow,
       blue = p.bright_blue,
@@ -365,9 +361,9 @@ local function get_groups()
     NvimTreeSymlink = { fg = colors.neutral_aqua },
     NvimTreeRootFolder = { fg = colors.neutral_purple, bold = true },
     NvimTreeFolderIcon = { fg = colors.neutral_blue, bold = true },
-    NvimTreeFileIcon = { fg = colors.light2 },
+    NvimTreeFileIcon = { fg = colors.light_light },
     NvimTreeExecFile = { fg = colors.neutral_green, bold = true },
-    NvimTreeOpenedFile = { fg = colors.bright_red, bold = true },
+    NvimTreeOpenedFile = { fg = colors.ruby_normal, bold = true },
     NvimTreeSpecialFile = { fg = colors.neutral_yellow, bold = true, underline = true },
     NvimTreeImageFile = { fg = colors.neutral_purple },
     NvimTreeIndentMarker = { fg = colors.dark3 },
