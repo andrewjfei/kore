@@ -241,7 +241,7 @@ local function get_groups()
     CursorLineNr = { fg = colors.yellow_normal, bg = colors.dark_normal },
     NonText = { link = "KoreBg2" },
     SpecialKey = { link = "KoreFg4" },
-    Visual = { bg = colors.dark_normal, reverse = config.invert_selection },
+    Visual = { bg = colors.dark_light, reverse = config.invert_selection },
     VisualNOS = { link = "Visual" },
     Search = { fg = colors.yellow_normal, bg = colors.background, reverse = config.inverse },
     IncSearch = { fg = colors.orange_normal, bg = colors.background, reverse = config.inverse },
