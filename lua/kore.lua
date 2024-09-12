@@ -113,9 +113,6 @@ local function get_colors()
   local p = Kore.palette
   local config = Kore.config
 
-  local bg = vim.o.background
-  local contrast = config.contrast
-
   local color_groups = {
     dark = {
       background = p.dark_dark,
@@ -209,20 +206,6 @@ local function get_groups()
     Colour3Background1Bold = { fg = colors.background, bg = colors.yellow, bold = true },
     Colour1Background2Bold = { fg = colors.background_alt, bg = colors.orange, bold = true },
     Colour3Background2Bold = { fg = colors.background_alt, bg = colors.yellow, bold = true },
-    -- KoreRedSign = config.transparent_mode and { fg = colors.red_normal, reverse = config.invert_signs }
-    --   or { fg = colors.red_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    -- KoreGreenSign = config.transparent_mode and { fg = colors.green_normal, reverse = config.invert_signs }
-    --   or { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    -- KoreYellowSign = config.transparent_mode and { fg = colors.yellow_normal, reverse = config.invert_signs }
-    --   or { fg = colors.yellow_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    -- KoreBlueSign = config.transparent_mode and { fg = colors.blue_normal, reverse = config.invert_signs }
-    --   or { fg = colors.blue_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    -- KorePinkSign = config.transparent_mode and { fg = colors.pink_normal, reverse = config.invert_signs }
-    --   or { fg = colors.pink_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    -- KoreCyanSign = config.transparent_mode and { fg = colors.cyan_normal, reverse = config.invert_signs }
-    --   or { fg = colors.cyan_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    -- KoreOrangeSign = config.transparent_mode and { fg = colors.orange_normal, reverse = config.invert_signs }
-    --   or { fg = colors.orange_normal, bg = colors.dark_normal, reverse = config.invert_signs },
     Error = { link = "Colour7" },
     Warning = { link = "Colour3" },
     Info = { link = "Colour6" },
@@ -240,7 +223,7 @@ local function get_groups()
     -- vim
     Normal = { link = "Background1Foreground1" }, -- basic foreground and background
     NormalFloat = { link = "Background2Foreground1" }, -- floating windows
-    -- NormalNC = config.dim_inactive and { fg = colors.gray, bg = colors.dark_normal } or { link = "Normal" }, -- normal text it non-current windows
+    NormalNC = config.dim_inactive and { fg = colors.gray, bg = colors.pink } or { link = "Normal" }, -- normal text it non-current windows
     -- CursorLine = { bg = colors.dark_normal }, -- background for line under cursor
     -- CursorColumn = { link = "CursorLine" }, 
     -- TabLineFill = { fg = colors.light_dark, bg = colors.dark_normal, reverse = config.invert_tabline },
@@ -250,7 +233,7 @@ local function get_groups()
     -- ColorColumn = { bg = colors.dark_normal },
     -- Conceal = { fg = colors.blue_normal },
     -- CursorLineNr = { fg = colors.yellow_normal, bg = colors.dark_normal },
-    -- NonText = { link = "KoreComment" },
+    NonText = { link = "Colour6" },
     SpecialKey = { link = "Colour1" },
     Visual = { link = "Background2" },
     -- VisualNOS = { link = "Visual" },
