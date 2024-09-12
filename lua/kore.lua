@@ -323,15 +323,6 @@ local function get_groups()
     Delimiter = { link = "Foreground1" },
     EndOfBuffer = { link = "Foreground5" },
 
-    -- nvim (need to refactor)
-    NvimLightGreen = { fg = colors.green_alt },
-    NvimLightRed = { fg = colors.red_alt },
-    NvimLightCyan = { fg = colors.cyan_alt },
-    NvimDarkYellow = { fg = colors.background, bg = colors.yellow },
-    NvimDarkGreen = { fg = colors.background, bg = colors.green },
-    NvimDarkRed = { fg = colors.background, bg = colors.red },
-    NvimInternalError = { bg = colors.red },
-
     -- lsp & lazy (diagnostic colours)
     DiagnosticError = { link = "Error" },
     DiagnosticWarn = { link = "Warning" },
