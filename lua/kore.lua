@@ -92,7 +92,7 @@ Kore.palette = {
   orange_light = "#ffd2b3",
 
   blue_dark = "#406abf",
-  blue_normal = "#85a3e0",
+  blue_normal = "#90c4d5",
   blue_light = "#c2d1f0",
 
   pink_dark = "#e05299",
@@ -100,7 +100,7 @@ Kore.palette = {
   pink_light = "#fccfe6",
 
   cyan_dark = "#2e9e95",
-  cyan_normal = "#9cc9c6",
+  cyan_normal = "#98cdbb",
   cyan_light = "#c4eeea",
 
   yellow_dark = "#e8ba30",
