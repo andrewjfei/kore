@@ -201,9 +201,14 @@ local function get_groups()
     Background2Colour1 = { fg = colors.orange, bg = colors.background_alt },
     Background3Colour1 = { fg = colors.orange, bg = colors.background_alt2 },
     Colour1Background1 = { fg = colors.background, bg = colors.orange },
+    Colour2Background1 = { fg = colors.background, bg = colors.green },
     Colour3Background1 = { fg = colors.background, bg = colors.yellow },
+    Colour7Background1 = { fg = colors.background, bg = colors.red },
     Colour1Background1Bold = { fg = colors.background, bg = colors.orange, bold = true },
+    Colour2Background1Bold = { fg = colors.background, bg = colors.green, bold = true },
     Colour3Background1Bold = { fg = colors.background, bg = colors.yellow, bold = true },
+    Colour6Background1Bold = { fg = colors.background, bg = colors.cyan, bold = true },
+    Colour7Background1Bold = { fg = colors.background, bg = colors.red, bold = true },
     Colour1Background2Bold = { fg = colors.background_alt, bg = colors.orange, bold = true },
     Colour3Background2Bold = { fg = colors.background_alt, bg = colors.yellow, bold = true },
     Error = { link = "Colour7" },
@@ -224,8 +229,8 @@ local function get_groups()
     Normal = { link = "Background1Foreground1" }, -- basic foreground and background 
     NormalFloat = { link = "Background2Foreground1" }, -- floating windows
     NormalNC = { link = "Normal" }, -- non-current windows
-    CursorLine = { link = "Colour7" }, -- background for line under cursor
-    CursorColumn = { link = "Colour5" },
+    CursorLine = { link = "Foreground3" }, -- line colour when :set cursorline is enabled
+    CursorColumn = { link = "Colour5" }, -- column colour when :set cursorcolumn is enabled
     -- TabLineFill = { fg = colors.light_dark, bg = colors.dark_normal, reverse = config.invert_tabline },
     -- TabLineSel = { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_tabline },
     -- TabLine = { link = "TabLineFill" },
@@ -296,9 +301,9 @@ local function get_groups()
     PmenuSel = { link = "Colour1Background2Bold" },
     -- PmenuSbar = { bg = colors.dark_light },
     -- PmenuThumb = { bg = colors.light_dark },
-    -- DiffDelete = { fg = colors.dark_normal, bg = colors.red_normal, bold = true },
-    -- DiffAdd = { fg = colors.dark_normal, bg = colors.green_normal, bold = true },
-    -- DiffChange = { fg = colors.dark_normal, bg = colors.cyan_normal, bold = true },
+    DiffDelete = { link = "Colour7Background1Bold" },
+    DiffAdd = { link = "Colour2Background1Bold" },
+    DiffChange = { link = "Colour6Background1Bold" },
     -- DiffText = { fg = colors.dark_normal, bg = colors.yellow_normal, bold = true },
     SpellBad = { link = "ErrorUndercurl" },
     SpellCap = { link = "WarningUndercurl" },
