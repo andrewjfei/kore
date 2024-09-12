@@ -308,7 +308,7 @@ local function get_groups()
     PmenuSbar = { bg = colors.dark_light },
     PmenuThumb = { bg = colors.light_dark },
     DiffDelete = { fg = colors.background, bg = colors.red_dark },
-    DiffAdd = { fg = colors.background, = bg = colors.green_dark },
+    DiffAdd = { fg = colors.background, bg = colors.green_dark },
     DiffChange = { fg = colors.background, bg = colors.cyan_dark },
     DiffText = { fg = colors.foreground, bg = colors.yellow_normal },
     SpellCap = { link = "KoreOrangeUnderline" },
