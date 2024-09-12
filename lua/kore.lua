@@ -194,11 +194,18 @@ local function get_groups()
     Colour5Bold = { fg = colors.blue, bold = true },
     Colour6Bold = { fg = colors.cyan, bold = true },
     Colour7Bold = { fg = colors.red, bold = true },
-    Background1 = { fg = colors.foreground, bg = colors.background },
-    Background2 = { fg = colors.foreground, bg = colors.background_alt },
-    Background2Colour = { fg = colors.orange, bg = colors.background_alt },
-    Colour1Background = { fg = colors.background_alt, bg = colors.orange },
-    Colour3Background = { fg = colors.background_alt, bg = colors.yellow },
+    Background1 = { bg = colors.background },
+    Background2 = { bg = colors.background_alt },
+    Background3 = { bg = colors.background_alt2 },
+    Background1Foreground = { fg = colors.foreground, bg = colors.background },
+    Background2Foreground = { fg = colors.foreground, bg = colors.background_alt },
+    Background3Foreground = { fg = colors.foreground, bg = colors.background_alt2 },
+    Background1Colour1 = { fg = colors.orange, bg = colors.background },
+    Background2Colour1 = { fg = colors.orange, bg = colors.background_alt },
+    Background3Colour1 = { fg = colors.orange, bg = colors.background_alt2 },
+    Colour1Background2 = { fg = colors.background_alt, bg = colors.orange },
+    Colour1AltBackground2 = { fg = colors.background_alt, bg = colors.orange_alt },
+    Colour3AltBackground2 = { fg = colors.background_alt, bg = colors.yellow_alt },
     -- KoreRedSign = config.transparent_mode and { fg = colors.red_normal, reverse = config.invert_signs }
     --   or { fg = colors.red_normal, bg = colors.dark_normal, reverse = config.invert_signs },
     -- KoreGreenSign = config.transparent_mode and { fg = colors.green_normal, reverse = config.invert_signs }
@@ -289,8 +296,8 @@ local function get_groups()
     -- StorageClass = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Structure = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Typedef = { link = "KoreCyan" }, -- to change when encountered in c or rust
-    Pmenu = { link = "Background2" },
-    -- PmenuSel = { fg = colors.dark_light, bg = colors.orange_normal, bold = config.bold },
+    Pmenu = { link = "Background2Foreground" },
+    PmenuSel = { link = "Colour1Background2" },
     -- PmenuSbar = { bg = colors.dark_light },
     -- PmenuThumb = { bg = colors.light_dark },
     -- DiffDelete = { fg = colors.dark_normal, bg = colors.red_normal, bold = true },
