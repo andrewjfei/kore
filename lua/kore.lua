@@ -287,7 +287,7 @@ local function get_groups()
     Keyword = { link = "KoreOrange" },
     Identifier = { link = "KoreForegorund" },
     Function = { link = "KoreFunction" },
-    PreProc = { link = "KorePink" },
+    PreProc = { link = "KoreOrange" },
     Include = { link = "KorePink" },
     Define = { link = "KoreCyan" },
     Macro = { link = "KoreCyan" },
