@@ -203,9 +203,8 @@ local function get_groups()
     Background1Colour1 = { fg = colors.orange, bg = colors.background },
     Background2Colour1 = { fg = colors.orange, bg = colors.background_alt },
     Background3Colour1 = { fg = colors.orange, bg = colors.background_alt2 },
-    Colour1Background2 = { fg = colors.background_alt, bg = colors.orange },
-    Colour1AltBackground2 = { fg = colors.background_alt, bg = colors.orange_alt },
-    Colour3AltBackground2 = { fg = colors.background_alt, bg = colors.yellow_alt },
+    Colour1Background2Bold = { fg = colors.background_alt, bg = colors.orange, bold = true },
+    Colour3Background2Bold = { fg = colors.background_alt, bg = colors.yellow, bold = true },
     -- KoreRedSign = config.transparent_mode and { fg = colors.red_normal, reverse = config.invert_signs }
     --   or { fg = colors.red_normal, bg = colors.dark_normal, reverse = config.invert_signs },
     -- KoreGreenSign = config.transparent_mode and { fg = colors.green_normal, reverse = config.invert_signs }
@@ -241,8 +240,8 @@ local function get_groups()
     SpecialKey = { link = "Colour1" },
     Visual = { link = "Background2" },
     -- VisualNOS = { link = "Visual" },
-    Search = { link = "Colour3AltBackground2" },
-    IncSearch = { link = "Colour1AltBackground2" },
+    Search = { link = "Colour3Background2Bold" },
+    IncSearch = { link = "Colour1Background2Bold" },
     CurSearch = { link = "IncSearch" },
     -- QuickFixLine = { link = "KorePink" },
     -- Underlined = { fg = colors.blue_normal, underline = config.underline },
@@ -297,7 +296,7 @@ local function get_groups()
     -- Structure = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Typedef = { link = "KoreCyan" }, -- to change when encountered in c or rust
     Pmenu = { link = "Background2Foreground1" },
-    PmenuSel = { link = "Colour1Background2", bold = true },
+    PmenuSel = { link = "Colour1Background2Bold" },
     -- PmenuSbar = { bg = colors.dark_light },
     -- PmenuThumb = { bg = colors.light_dark },
     -- DiffDelete = { fg = colors.dark_normal, bg = colors.red_normal, bold = true },
