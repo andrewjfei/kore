@@ -225,8 +225,8 @@ local function get_groups()
     ErrorUndercurl = { undercurl = true, sp = colors.red },
 
     -- vim
-    Normal = { link = "Background1Foreground" }, -- basic foreground and background
-    -- NormalFloat = config.transparent_mode and { fg = colors.foreground, bg = nil } or { fg = colors.foreground, bg = colors.dark_normal }, -- floating windows
+    Normal = { link = "Background1Foreground1" }, -- basic foreground and background
+    NormalFloat = { link = "Background2Foreground1" }, -- floating windows
     -- NormalNC = config.dim_inactive and { fg = colors.gray, bg = colors.dark_normal } or { link = "Normal" }, -- normal text it non-current windows
     -- CursorLine = { bg = colors.dark_normal }, -- background for line under cursor
     -- CursorColumn = { link = "CursorLine" }, 
@@ -239,7 +239,7 @@ local function get_groups()
     -- CursorLineNr = { fg = colors.yellow_normal, bg = colors.dark_normal },
     -- NonText = { link = "KoreComment" },
     SpecialKey = { link = "Colour1" },
-    Visual = { link = "Background3" },
+    Visual = { link = "Background2" },
     -- VisualNOS = { link = "Visual" },
     Search = { link = "Colour3AltBackground2" },
     IncSearch = { link = "Colour1AltBackground2" },
@@ -297,7 +297,7 @@ local function get_groups()
     -- Structure = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Typedef = { link = "KoreCyan" }, -- to change when encountered in c or rust
     Pmenu = { link = "Background2Foreground1" },
-    PmenuSel = { link = "Colour1Background2" },
+    PmenuSel = { link = "Colour1Background2", bold = true },
     -- PmenuSbar = { bg = colors.dark_light },
     -- PmenuThumb = { bg = colors.light_dark },
     -- DiffDelete = { fg = colors.dark_normal, bg = colors.red_normal, bold = true },
@@ -397,7 +397,7 @@ local function get_groups()
     -- ["@string.escape"] = { link = "SpecialChar" },
     -- ["@string.special"] = { link = "SpecialChar" },
     -- ["@string.special.path"] = { link = "Underlined" },
-    -- ["@string.special.symbol"] = { link = "Identifier" },
+    ["@string.special.symbol"] = { link = "Identifier" },
     -- ["@string.special.url"] = { link = "Underlined" },
     ["@character"] = { link = "Character" },
     -- ["@character.special"] = { link = "SpecialChar" },
@@ -410,8 +410,8 @@ local function get_groups()
     ["@function.call"] = { link = "Function" },
     -- ["@function.macro"] = { link = "Macro" },
     ["@function.method"] = { link = "Function" },
-    -- ["@method"] = { link = "Function" },
-    -- ["@method.call"] = { link = "Function" },
+    ["@method"] = { link = "Function" },
+    ["@method.call"] = { link = "Function" },
     ["@constructor"] = { link = "Special" },
     ["@parameter"] = { link = "Identifier" },
     ["@keyword"] = { link = "Keyword" },
@@ -435,11 +435,11 @@ local function get_groups()
     ["@type"] = { link = "Type" },
     ["@type.builtin"] = { link = "Type" },
     -- ["@type.definition"] = { link = "Typedef" },
-    -- ["@type.qualifier"] = { link = "Type" },
+    ["@type.qualifier"] = { link = "Type" },
     -- ["@storageclass"] = { link = "StorageClass" },
     -- ["@attribute"] = { link = "PreProc" },
     ["@field"] = { link = "Identifier" },
-    -- ["@property"] = { link = "Identifier" },
+    ["@property"] = { link = "Identifier" },
     ["@variable"] = { link = "Identifier" },
     ["@variable.builtin"] = { link = "Special" },
     ["@variable.member"] = { link = "Identifier" },
