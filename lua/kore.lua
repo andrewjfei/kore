@@ -204,6 +204,7 @@ local function get_groups()
     Background2Colour1 = { fg = colors.orange, bg = colors.background_alt },
     Background3Colour1 = { fg = colors.orange, bg = colors.background_alt2 },
     Colour1Background1 = { fg = colors.background, bg = colors.orange },
+    Colour3Background1 = { fg = colors.background, bg = colors.yellow },
     Colour1Background1Bold = { fg = colors.background, bg = colors.orange, bold = true },
     Colour3Background1Bold = { fg = colors.background, bg = colors.yellow, bold = true },
     Colour1Background2Bold = { fg = colors.background_alt, bg = colors.orange, bold = true },
@@ -253,8 +254,8 @@ local function get_groups()
     SpecialKey = { link = "Colour1" },
     Visual = { link = "Background2" },
     -- VisualNOS = { link = "Visual" },
-    Search = { link = "Colour3Background1Bold" },
-    IncSearch = { link = "Colour1Background1Bold" },
+    Search = { link = "Colour3Background1" },
+    IncSearch = { link = "Colour1Background1" },
     CurSearch = { link = "IncSearch" },
     -- QuickFixLine = { link = "KorePink" },
     -- Underlined = { fg = colors.blue_normal, underline = config.underline },
@@ -309,7 +310,7 @@ local function get_groups()
     -- Structure = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Typedef = { link = "KoreCyan" }, -- to change when encountered in c or rust
     Pmenu = { link = "Background2Foreground1" },
-    PmenuSel = { link = "Colour1Background2" },
+    PmenuSel = { link = "Colour1Background2Bold" },
     -- PmenuSbar = { bg = colors.dark_light },
     -- PmenuThumb = { bg = colors.light_dark },
     -- DiffDelete = { fg = colors.dark_normal, bg = colors.red_normal, bold = true },
