@@ -175,11 +175,11 @@ local function get_groups()
 
   local groups = {
     -- colour variables
-    Foreground1 = { fg = colors.foreground }
-    Foreground2= { fg = colors.foreground_alt }
-    Foreground3 = { fg = colors.foreground_alt2 }
-    Foreground4 = { fg = colors.background_alt2 }
-    Foreground5 = { fg = colors.background_alt1 }
+    Foreground1 = { fg = colors.foreground },
+    Foreground2 = { fg = colors.foreground_alt },
+    Foreground3 = { fg = colors.foreground_alt2 },
+    Foreground4 = { fg = colors.background_alt2 },
+    Foreground5 = { fg = colors.background_alt1 },
     Colour1 = { fg = colors.orange },
     Colour2 = { fg = colors.green },
     Colour3 = { fg = colors.yellow },
