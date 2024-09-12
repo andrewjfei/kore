@@ -254,7 +254,7 @@ local function get_groups()
     -- WarningMsg = { link = "KoreRedBold" },
     LineNr = { link = "Foreground3" },
     -- SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.dark_normal },
-    Folded = { link = "Background2Colour1Alt" },
+    Folded = { link = "Background2" },
     -- FoldColumn = { fg = colors.yellow_normal, bg = colors.dark_normal },
     -- Cursor = { reverse = config.inverse },
     -- vCursor = { link = "Cursor" },
@@ -305,7 +305,7 @@ local function get_groups()
 
     -- lsp
     Delimiter = { link = "Foreground1" },
-    EndOfBuffer = { link = "Colour1" },
+    EndOfBuffer = { link = "Foreground5" },
     -- DiagnosticError = { link = "KoreRed" },
     -- DiagnosticSignError = { link = "KoreRedSign" },
     -- DiagnosticUnderlineError = { link = "KoreRedUnderline" },
@@ -348,11 +348,11 @@ local function get_groups()
 
     -- javascript
     -- javaScriptBraces = { link = "KoreForeground" },
-    -- javaScriptFunction = { link = "KorePink" },
+    javaScriptFunction = { link = "KorePink" },
     -- javaScriptIdentifier = { link = "KoreOrange" },
     -- javaScriptMember = { link = "KoreCyan" },
     -- javaScriptNumber = { link = "KorePink" },
-    -- javaScriptNull = { link = "KorePink" },
+    javaScriptNull = { link = "Colour4" },
     -- javaScriptParens = { link = "KoreGreen" },
 
     -- typescript
