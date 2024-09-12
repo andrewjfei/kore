@@ -229,7 +229,7 @@ local function get_groups()
     Normal = { link = "Background1Foreground1" }, -- basic foreground and background 
     NormalFloat = { link = "Background2Foreground1" }, -- floating windows
     NormalNC = { link = "Normal" }, -- non-current windows
-    CursorLine = { link = "Foreground3" }, -- line colour when :set cursorline is enabled
+    CursorLine = { link = "Foreground4" }, -- line colour when :set cursorline is enabled
     CursorColumn = { link = "Colour5" }, -- column colour when :set cursorcolumn is enabled
     -- TabLineFill = { fg = colors.light_dark, bg = colors.dark_normal, reverse = config.invert_tabline },
     -- TabLineSel = { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_tabline },
@@ -303,8 +303,8 @@ local function get_groups()
     -- PmenuThumb = { bg = colors.light_dark },
     DiffDelete = { link = "Colour7Background1Bold" },
     DiffAdd = { link = "Colour2Background1Bold" },
-    DiffChange = { link = "Colour6Background1Bold" },
-    -- DiffText = { fg = colors.dark_normal, bg = colors.yellow_normal, bold = true },
+    DiffChange = { link = "Colour3Background1Bold" },
+    DiffText = { link = "Colour6Background1Bold" },
     SpellBad = { link = "ErrorUndercurl" },
     SpellCap = { link = "WarningUndercurl" },
     SpellLocal = { link = "InfoUndercurl" },
