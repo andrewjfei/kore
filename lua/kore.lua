@@ -221,9 +221,9 @@ local function get_groups()
     HintUndercurl = { undercurl = true, sp = colors.pink },
 
     -- vim
-    Normal = { link = "Background1Foreground1" }, -- basic foreground and background
+    Normal = { link = "Background1Foreground1" }, -- basic foreground and background 
     NormalFloat = { link = "Background2Foreground1" }, -- floating windows
-    NormalNC = config.dim_inactive and { fg = colors.gray, bg = colors.pink } or { link = "Normal" }, -- normal text it non-current windows
+    NormalNC = { link = "Colour1Background1Bold" }, -- non-current windows
     -- CursorLine = { bg = colors.dark_normal }, -- background for line under cursor
     -- CursorColumn = { link = "CursorLine" }, 
     -- TabLineFill = { fg = colors.light_dark, bg = colors.dark_normal, reverse = config.invert_tabline },
@@ -233,7 +233,7 @@ local function get_groups()
     -- ColorColumn = { bg = colors.dark_normal },
     -- Conceal = { fg = colors.blue_normal },
     -- CursorLineNr = { fg = colors.yellow_normal, bg = colors.dark_normal },
-    NonText = { link = "Colour6" },
+    NonText = { link = "Comment" },
     SpecialKey = { link = "Colour1" },
     Visual = { link = "Background2" },
     -- VisualNOS = { link = "Visual" },
@@ -250,11 +250,11 @@ local function get_groups()
     -- WildMenu = { fg = colors.blue_normal, bg = colors.dark_light, bold = config.bold },
     Directory = { link = "Colour2Bold" },
     Title = { link = "Colour1Bold" },
-    -- ErrorMsg = { link = "Colour7" },
-    -- MoreMsg = { link = "KoreYellowBold" },
-    -- ModeMsg = { link = "KoreYellowBold" },
-    -- Question = { link = "KoreOrangeBold" },
-    -- WarningMsg = { link = "Colour3" },
+    ErrorMsg = { link = "Error" },
+    MoreMsg = { link = "Foreground1" },
+    ModeMsg = { link = "Foreground1" },
+    Question = { link = "Hint" },
+    WarningMsg = { link = "Warning" },
     LineNr = { link = "Foreground3" },
     -- SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.dark_normal },
     Folded = { link = "Background2Colour1" },
