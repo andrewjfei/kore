@@ -223,9 +223,9 @@ local function get_groups()
     -- vim
     Normal = { link = "Background1Foreground1" }, -- basic foreground and background 
     NormalFloat = { link = "Background2Foreground1" }, -- floating windows
-    NormalNC = { link = "Colour1Background1Bold" }, -- non-current windows
-    -- CursorLine = { bg = colors.dark_normal }, -- background for line under cursor
-    -- CursorColumn = { link = "CursorLine" }, 
+    NormalNC = { link = "Normal" }, -- non-current windows
+    CursorLine = { link = "Colour7" }, -- background for line under cursor
+    CursorColumn = { link = "Colour5" },
     -- TabLineFill = { fg = colors.light_dark, bg = colors.dark_normal, reverse = config.invert_tabline },
     -- TabLineSel = { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_tabline },
     -- TabLine = { link = "TabLineFill" },
