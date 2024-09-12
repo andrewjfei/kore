@@ -327,9 +327,9 @@ local function get_groups()
     NvimLightGreen = { fg = colors.green_alt },
     NvimLightRed = { fg = colors.red_alt },
     NvimLightCyan = { fg = colors.cyan_alt },
-    NvimDarkYellow = { fg = colors.background. bg = colors.yellow },
-    NvimDarkGreen = { fg = colors.background. bg = colors.green },
-    NvimDarkRed = { fg = colors.background. bg = colors.red },
+    NvimDarkYellow = { fg = colors.background, bg = colors.yellow },
+    NvimDarkGreen = { fg = colors.background, bg = colors.green },
+    NvimDarkRed = { fg = colors.background, bg = colors.red },
     NvimInternalError = { bg = colors.red },
 
     -- lsp & lazy (diagnostic colours)
