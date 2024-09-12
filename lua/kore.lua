@@ -71,16 +71,13 @@ Kore.config = {
 -- main kore color palette
 ---@class KorePalette
 Kore.palette = {
-  dark_dark = "#1d1d1d", -- background
+  dark_dark = "#1d1d1d",
   dark_normal = "#2d2d2d",
   dark_light = "#444444",
-  dark3 = "#0000ff", -- to remove blue
 
   light_dark = "#747474",
   light_normal = "#b4b4b4",
   light_light = "#e4e4e4",
-  light3 = "#ff0000", -- to remove red_normal
-  light4 = "#00ff00", -- to remove green_normal
 
   red_dark = "#d94426",
   red_normal = "#ff7f66",
@@ -90,9 +87,9 @@ Kore.palette = {
   green_normal = "#aacd98",
   green_light = "#d2ecc6",
 
-  yellow_dark = "#e8ba30",
-  yellow_normal = "#f2d98c",
-  yellow_light = "#fff2cc",
+  orange_dark = "#ee7c2b",
+  orange_normal = "#ffa666",
+  orange_light = "#ffd2b3",
 
   blue_dark = "#406abf",
   blue_normal = "#85a3e0",
@@ -106,11 +103,9 @@ Kore.palette = {
   cyan_normal = "#9cc9c6",
   cyan_light = "#c4eeea",
 
-  orange_dark = "#ee7c2b",
-  orange_normal = "#ffa666",
-  orange_light = "#ffd2b3",
-
-  gray = "#ffdd00", -- to remove yellow_normal
+  yellow_dark = "#e8ba30",
+  yellow_normal = "#f2d98c",
+  yellow_light = "#fff2cc",
 }
 
 -- get a hex list of gruvbox colors based on current bg and constrast config
@@ -124,28 +119,25 @@ local function get_colors()
   local color_groups = {
     dark = {
       background = p.dark_dark,
-      dark_normal = p.dark_normal,
-      dark_light = p.dark_light,
-      bg3 = p.dark3,
-      light_dark = p.light_dark,
+      background_alt = p.dark_normal,
+      background_alt2 = p.dark_light,
       foreground = p.light_light,
-      light_normal = p.light_normal,
-      fg4 = p.light4,
-      red_normal = p.red_normal,
-      green_normal = p.green_normal,
-      yellow_normal = p.yellow_normal,
-      blue_normal = p.blue_normal,
-      pink_normal = p.pink_normal,
-      cyan_normal = p.cyan_normal,
-      orange_normal = p.orange_normal,
-      red_dark = p.red_dark,
-      green_dark = p.green_dark,
-      yellow_dark = p.yellow_dark,
-      blue_dark = p.blue_dark,
-      pink_dark = p.pink_dark,
-      cyan_dark = p.cyan_dark,
-      orange_dark = p.orange_dark,
-      gray = p.gray,
+      forground_alt = p.light_normal,
+      foreground_alt2 = p.light_dark,
+      red = p.red_normal,
+      red_alt = p.red_light,
+      green = p.green_normal,
+      green_alt = p.green_light,
+      yellow = p.yellow_normal,
+      yellow_alt = p.yellow_light,
+      blue = p.blue_normal,
+      blue_alt = p.blue_light,
+      pink = p.pink_normal,
+      pink_alt = p.pink_light,
+      cyan = p.cyan_normal,
+      cyan_alt = p.cyan_light,
+      orange = p.orange_normal,
+      orange_alt = p.orange_light,
     }
   }
 
@@ -158,23 +150,24 @@ local function get_groups()
 
   if config.terminal_colors then
     local term_colors = {
-      colors.dark_normal,
-      colors.red_normal,
-      colors.green_normal,
-      colors.yellow_normal,
-      colors.blue_normal,
-      colors.pink_normal,
-      colors.cyan_normal,
-      colors.light_dark,
-      colors.dark_light,
-      colors.red_light,
-      colors.green_light,
-      colors.yellow_light,
-      colors.blue_light,
-      colors.pink_light,
-      colors.cyan_light,
-      colors.light_normal,
+      colors.background_alt,
+      colors.red,
+      colors.green,
+      colors.yellow,
+      colors.blue,
+      colors.pink,
+      colors.cyan,
+      colors.foregorund_alt,
+      colors.background_alt2,
+      colors.red_alt,
+      colors.green_alt,
+      colors.yellow_alt,
+      colors.blue_alt,
+      colors.pink_alt,
+      colors.cyan_alt,
+      colors.foreground_alt2,
     }
+
     for index, value in ipairs(term_colors) do
       vim.g["terminal_color_" .. index - 1] = value
     end
