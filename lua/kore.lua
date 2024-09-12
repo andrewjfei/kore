@@ -194,6 +194,9 @@ local function get_groups()
     Colour5Bold = { fg = colors.blue, bold = true },
     Colour6Bold = { fg = colors.cyan, bold = true },
     Colour7Bold = { fg = colors.red, bold = true },
+    Background1 = { fg = colors.foreground, bg = colors.background },
+    Background2 = { fg = colors.foreground, bg = colors.background_alt },
+    Background2Colour1Alt = { fg = colors.orange_alt, bg = colors.background_alt },
     Colour1Background = { fg = colors.background_alt, bg = colors.orange },
     Colour3Background = { fg = colors.background_alt, bg = colors.yellow },
     -- KoreRedSign = config.transparent_mode and { fg = colors.red_normal, reverse = config.invert_signs }
@@ -215,7 +218,7 @@ local function get_groups()
     ErrorUndercurl = { undercurl = true, sp = colors.red },
 
     -- vim
-    Normal = { fg = colors.foreground, bg = colors.background }, -- basic foreground and background
+    Normal = { link = "Background1" }, -- basic foreground and background
     -- NormalFloat = config.transparent_mode and { fg = colors.foreground, bg = nil } or { fg = colors.foreground, bg = colors.dark_normal }, -- floating windows
     -- NormalNC = config.dim_inactive and { fg = colors.gray, bg = colors.dark_normal } or { link = "Normal" }, -- normal text it non-current windows
     -- CursorLine = { bg = colors.dark_normal }, -- background for line under cursor
@@ -228,7 +231,7 @@ local function get_groups()
     -- Conceal = { fg = colors.blue_normal },
     -- CursorLineNr = { fg = colors.yellow_normal, bg = colors.dark_normal },
     -- NonText = { link = "KoreComment" },
-    -- SpecialKey = { link = "KoreFg4" },
+    SpecialKey = { link = "Colour1" },
     -- Visual = { bg = colors.dark_light, reverse = config.invert_selection },
     -- VisualNOS = { link = "Visual" },
     Search = { link = "Colour3Background" },
@@ -251,14 +254,14 @@ local function get_groups()
     -- WarningMsg = { link = "KoreRedBold" },
     LineNr = { link = "Foreground3" },
     -- SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.dark_normal },
-    -- Folded = { fg = colors.orange_normal, bg = colors.dark_normal },
+    Folded = { link = "Background2Colour1Alt" },
     -- FoldColumn = { fg = colors.yellow_normal, bg = colors.dark_normal },
     -- Cursor = { reverse = config.inverse },
     -- vCursor = { link = "Cursor" },
     -- iCursor = { link = "Cursor" },
     -- lCursor = { link = "Cursor" },
     -- Special = { link = "KoreOrange" },
-    -- Comment = { link = "KoreComment" },
+    Comment = { link = "Foreground3" },
     -- Todo = { fg = colors.yellow_normal, bold = true }, -- todo text in comments
     -- Done = { fg = colors.dark_normal, bg = colors.green_normal, bold = true },
     -- Error = { fg = colors.dark_normal, bg = colors.red_normal, bold = true },
@@ -294,15 +297,15 @@ local function get_groups()
     -- DiffAdd = { fg = colors.dark_normal, bg = colors.green_normal, bold = true },
     -- DiffChange = { fg = colors.dark_normal, bg = colors.cyan_normal, bold = true },
     -- DiffText = { fg = colors.dark_normal, bg = colors.yellow_normal, bold = true },
-    -- SpellCap = { link = "KoreOrangeUnderline" },
-    -- SpellBad = { link = "KoreRedUnderline" },
-    -- SpellLocal = { link = "KoreYellowUnderline" },
-    -- SpellRare = { link = "KoreLightUnderline" },
+    SpellCap = { link = "WarningUndercurl" },
+    SpellBad = { link = "ErrorUndercurl" },
+    SpellLocal = { link = "Undercurl" },
+    SpellRare = { link = "Undercurl" },
     -- Whitespace = { fg = colors.dark_light },
 
     -- lsp
-    -- Delimiter = { link = "KoreForeground" },
-    -- EndOfBuffer = { link = "NonText" },
+    Delimiter = { link = "Foreground1" },
+    EndOfBuffer = { link = "Colour1" },
     -- DiagnosticError = { link = "KoreRed" },
     -- DiagnosticSignError = { link = "KoreRedSign" },
     -- DiagnosticUnderlineError = { link = "KoreRedUnderline" },
