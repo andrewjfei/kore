@@ -207,6 +207,7 @@ local function get_groups()
     Colour1Background1Bold = { fg = colors.background, bg = colors.orange, bold = true },
     Colour2Background1Bold = { fg = colors.background, bg = colors.green, bold = true },
     Colour3Background1Bold = { fg = colors.background, bg = colors.yellow, bold = true },
+    Colour4Background1Bold = { fg = colors.background, bg = colors.pink, bold = true },
     Colour6Background1Bold = { fg = colors.background, bg = colors.cyan, bold = true },
     Colour7Background1Bold = { fg = colors.background, bg = colors.red, bold = true },
     Colour1Background2Bold = { fg = colors.background_alt, bg = colors.orange, bold = true },
@@ -229,7 +230,7 @@ local function get_groups()
     Normal = { link = "Background1Foreground1" }, -- basic foreground and background 
     NormalFloat = { link = "Background2Foreground1" }, -- floating windows
     NormalNC = { link = "Normal" }, -- non-current windows
-    CursorLine = { link = "Foreground4" }, -- line colour when :set cursorline is enabled
+    CursorLine = { link = "Foreground2" }, -- line colour when :set cursorline is enabled
     CursorColumn = { link = "Colour5" }, -- column colour when :set cursorcolumn is enabled
     -- TabLineFill = { fg = colors.light_dark, bg = colors.dark_normal, reverse = config.invert_tabline },
     -- TabLineSel = { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_tabline },
@@ -301,10 +302,13 @@ local function get_groups()
     PmenuSel = { link = "Colour1Background2Bold" },
     -- PmenuSbar = { bg = colors.dark_light },
     -- PmenuThumb = { bg = colors.light_dark },
+    Added = { link = "Ok" },
+    Removed = { link = "Error" },
+    Changed = { link = "Info" },
     DiffDelete = { link = "Colour7Background1Bold" },
     DiffAdd = { link = "Colour2Background1Bold" },
-    DiffChange = { link = "Colour3Background1Bold" },
-    DiffText = { link = "Colour6Background1Bold" },
+    DiffChange = { link = "Colour6Background1Bold" },
+    DiffText = { link = "Colour4Background1Bold" },
     SpellBad = { link = "ErrorUndercurl" },
     SpellCap = { link = "WarningUndercurl" },
     SpellLocal = { link = "InfoUndercurl" },
