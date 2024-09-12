@@ -233,7 +233,7 @@ local function get_groups()
     ErrorUndercurl = { undercurl = true, sp = colors.red },
     WarningUndercurl = { undercurl = true, sp = colors.yellow },
     InfoUndercurl = { undercurl = true, sp = colors.cyan },
-    HintUndercurl = { undercurl = true, sp = colors.hint },
+    HintUndercurl = { undercurl = true, sp = colors.pink },
 
     -- vim
     Normal = { link = "Background1Foreground1" }, -- basic foreground and background
@@ -322,6 +322,15 @@ local function get_groups()
     -- Whitespace = { fg = colors.dark_light },
     Delimiter = { link = "Foreground1" },
     EndOfBuffer = { link = "Foreground5" },
+
+    -- nvim (need to refactor)
+    NvimLightGreen = { fg = colors.green_alt },
+    NvimLightRed = { fg = colors.red_alt },
+    NvimLightCyan = { fg = colors.cyan_alt },
+    NvimDarkYellow = { fg = colors.background. bg = colors.yellow },
+    NvimDarkGreen = { fg = colors.background. bg = colors.green },
+    NvimDarkRed = { fg = colors.background. bg = colors.red },
+    NvimInternalError = { bg = colors.red },
 
     -- lsp & lazy (diagnostic colours)
     DiagnosticError = { link = "Error" },
