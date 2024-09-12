@@ -187,7 +187,7 @@ local function get_groups()
     KoreForeground = { fg = colors.foreground },
     KoreFg2 = { fg = colors.light_normal },
     KoreFg3 = { fg = colors.foreground },
-    KoreFg4 = { fg = colors.colors.orange_normal },
+    KoreFg4 = { fg = colors.orange_normal },
     KoreGray = { fg = colors.gray },
     KoreBackground = { fg = colors.background },
     KoreBg1 = { fg = colors.dark_normal },
