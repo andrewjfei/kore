@@ -232,7 +232,7 @@ local function get_groups()
     -- CursorLineNr = { fg = colors.yellow_normal, bg = colors.dark_normal },
     -- NonText = { link = "KoreComment" },
     SpecialKey = { link = "Colour1" },
-    -- Visual = { bg = colors.dark_light, reverse = config.invert_selection },
+    Visual = { link = "Colour4" },
     -- VisualNOS = { link = "Visual" },
     Search = { link = "Colour3Background" },
     IncSearch = { link = "Colour1Background" },
@@ -512,14 +512,14 @@ local function get_groups()
 
     -- telescope
     TelescopeNormal = { link = "Background1" },
-    TelescopeSelection = { link = "Colour1" },
+    TelescopeSelection = { link = "Background2Colour1" },
     TelescopeSelectionCaret = { link = "Colour1" },
     TelescopeMultiSelection = { link = "Foreground4" },
     TelescopeBorder = { link = "TelescopeNormal" },
     TelescopePromptBorder = { link = "TelescopeNormal" },
     TelescopeResultsBorder = { link = "TelescopeNormal" },
     TelescopePreviewBorder = { link = "TelescopeNormal" },
-    TelescopeMatching = { link = "Colour2" },
+    TelescopeMatching = { link = "Colour3" },
     TelescopePromptPrefix = { link = "Colour1" },
     TelescopePrompt = { link = "TelescopeNormal" },
 
