@@ -253,7 +253,7 @@ local function get_groups()
     -- WinBarNC = { fg = colors.foreground, bg = colors.dark_normal },
     -- WinSeparator = { fg = colors.orange_normal, bg = nil },
     -- WildMenu = { fg = colors.blue_normal, bg = colors.dark_light, bold = config.bold },
-    Directory = { link = "Colour2Bold" },
+    Directory = { link = "Colour2" },
     Title = { link = "Colour1Bold" },
     ErrorMsg = { link = "Error" },
     MoreMsg = { link = "Foreground1" },
