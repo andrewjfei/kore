@@ -179,7 +179,7 @@ local function get_groups()
     Foreground2 = { fg = colors.foreground_alt },
     Foreground3 = { fg = colors.foreground_alt2 },
     Foreground4 = { fg = colors.background_alt2 },
-    Foreground5 = { fg = colors.background_alt1 },
+    Foreground5 = { fg = colors.background_alt },
     Colour1 = { fg = colors.orange },
     Colour2 = { fg = colors.green },
     Colour3 = { fg = colors.yellow },
@@ -196,7 +196,7 @@ local function get_groups()
     Colour7Bold = { fg = colors.red, bold = true },
     Background1 = { fg = colors.foreground, bg = colors.background },
     Background2 = { fg = colors.foreground, bg = colors.background_alt },
-    Background2Colour1Alt = { fg = colors.orange_alt, bg = colors.background_alt },
+    Background2Colour = { fg = colors.orange, bg = colors.background_alt },
     Colour1Background = { fg = colors.background_alt, bg = colors.orange },
     Colour3Background = { fg = colors.background_alt, bg = colors.yellow },
     -- KoreRedSign = config.transparent_mode and { fg = colors.red_normal, reverse = config.invert_signs }
@@ -254,7 +254,7 @@ local function get_groups()
     -- WarningMsg = { link = "KoreRedBold" },
     LineNr = { link = "Foreground3" },
     -- SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.dark_normal },
-    Folded = { link = "Background2" },
+    Folded = { link = "Background2Colour1" },
     -- FoldColumn = { fg = colors.yellow_normal, bg = colors.dark_normal },
     -- Cursor = { reverse = config.inverse },
     -- vCursor = { link = "Cursor" },
@@ -289,7 +289,7 @@ local function get_groups()
     -- StorageClass = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Structure = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Typedef = { link = "KoreCyan" }, -- to change when encountered in c or rust
-    -- Pmenu = { fg = colors.foreground, bg = colors.dark_light },
+    Pmenu = { link = "Background2" },
     -- PmenuSel = { fg = colors.dark_light, bg = colors.orange_normal, bold = config.bold },
     -- PmenuSbar = { bg = colors.dark_light },
     -- PmenuThumb = { bg = colors.light_dark },
@@ -302,10 +302,10 @@ local function get_groups()
     SpellLocal = { link = "Undercurl" },
     SpellRare = { link = "Undercurl" },
     -- Whitespace = { fg = colors.dark_light },
-
-    -- lsp
     Delimiter = { link = "Foreground1" },
     EndOfBuffer = { link = "Foreground5" },
+
+    -- lsp
     -- DiagnosticError = { link = "KoreRed" },
     -- DiagnosticSignError = { link = "KoreRedSign" },
     -- DiagnosticUnderlineError = { link = "KoreRedUnderline" },
@@ -348,11 +348,11 @@ local function get_groups()
 
     -- javascript
     -- javaScriptBraces = { link = "KoreForeground" },
-    javaScriptFunction = { link = "KorePink" },
-    -- javaScriptIdentifier = { link = "KoreOrange" },
-    -- javaScriptMember = { link = "KoreCyan" },
-    -- javaScriptNumber = { link = "KorePink" },
-    javaScriptNull = { link = "Colour4" },
+    javaScriptFunction = { link = "Colour4" },
+    javaScriptIdentifier = { link = "Colour6" },
+    javaScriptMember = { link = "Colour7" },
+    javaScriptNumber = { link = "Colour7" },
+    javaScriptNull = { link = "Colour7" },
     -- javaScriptParens = { link = "KoreGreen" },
 
     -- typescript
