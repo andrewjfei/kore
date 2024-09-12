@@ -153,7 +153,7 @@ local function get_groups()
       colors.background_alt,
       colors.red,
       colors.green,
-      colors.yellow,
+      colors.orange,
       colors.blue,
       colors.pink,
       colors.cyan,
@@ -161,7 +161,7 @@ local function get_groups()
       colors.background_alt2,
       colors.red_alt,
       colors.green_alt,
-      colors.yellow_alt,
+      colors.orange_alt,
       colors.blue_alt,
       colors.pink_alt,
       colors.cyan_alt,
@@ -175,54 +175,37 @@ local function get_groups()
 
   local groups = {
     -- colour variables
-    KoreFunction = { fg = colors.green_normal },
-    KoreFg0 = { fg = colors.gray },
-    KoreForeground = { fg = colors.foreground },
-    KoreFg2 = { fg = colors.light_normal },
-    KoreFg3 = { fg = colors.foreground },
-    KoreFg4 = { fg = colors.orange_normal },
-    KoreGray = { fg = colors.gray },
-    KoreBackground = { fg = colors.background },
-    KoreBg1 = { fg = colors.dark_normal },
-    KoreComment = { fg = colors.light_dark },
-    KoreBg3 = { fg = colors.bg3 },
-    KoreBg4 = { fg = colors.light_dark },
-    KoreRed = { fg = colors.red_normal },
-    KoreRedBold = { fg = colors.red_normal, bold = config.bold },
-    KoreGreen = { fg = colors.green_normal },
-    KoreGreenBold = { fg = colors.green_normal, bold = config.bold },
-    KoreYellow = { fg = colors.yellow_normal },
-    KoreYellowBold = { fg = colors.yellow_normal, bold = config.bold },
-    KoreBlue = { fg = colors.blue_normal },
-    KoreBlueBold = { fg = colors.blue_normal, bold = config.bold },
-    KorePink = { fg = colors.pink_normal },
-    KorePinkBold = { fg = colors.pink_normal, bold = config.bold },
-    KoreCyan = { fg = colors.cyan_normal },
-    KoreCyanBold = { fg = colors.cyan_normal, bold = config.bold },
-    KoreOrange = { fg = colors.orange_normal },
-    KoreOrangeBold = { fg = colors.orange_normal, bold = config.bold },
-    KoreRedSign = config.transparent_mode and { fg = colors.red_normal, reverse = config.invert_signs }
-      or { fg = colors.red_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    KoreGreenSign = config.transparent_mode and { fg = colors.green_normal, reverse = config.invert_signs }
-      or { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    KoreYellowSign = config.transparent_mode and { fg = colors.yellow_normal, reverse = config.invert_signs }
-      or { fg = colors.yellow_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    KoreBlueSign = config.transparent_mode and { fg = colors.blue_normal, reverse = config.invert_signs }
-      or { fg = colors.blue_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    KorePinkSign = config.transparent_mode and { fg = colors.pink_normal, reverse = config.invert_signs }
-      or { fg = colors.pink_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    KoreCyanSign = config.transparent_mode and { fg = colors.cyan_normal, reverse = config.invert_signs }
-      or { fg = colors.cyan_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    KoreOrangeSign = config.transparent_mode and { fg = colors.orange_normal, reverse = config.invert_signs }
-      or { fg = colors.orange_normal, bg = colors.dark_normal, reverse = config.invert_signs },
-    KoreRedUnderline = { undercurl = config.undercurl, sp = colors.red_normal },
-    KoreGreenUnderline = { undercurl = config.undercurl, sp = colors.green_normal },
-    KoreYellowUnderline = { undercurl = config.undercurl, sp = colors.yellow_normal },
-    KoreBlueUnderline = { undercurl = config.undercurl, sp = colors.blue_normal },
-    KorePinkUnderline = { undercurl = config.undercurl, sp = colors.pink_normal },
-    KoreCyanUnderline = { undercurl = config.undercurl, sp = colors.cyan_normal },
-    KoreOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange_normal },
-    KoreLightUnderline = { undercurl = config.undercurl, sp = colors.foreground },
+    Colour1 = { fg = colors.orange },
+    Colour1Bold = { fg = colors.orange, bold = true },
+    Colour2 = { fg = colors.green },
+    Colour2Bold = { fg = colors.green, bold = true },
+    Colour3 = { fg = colors.yellow },
+    Colour3Bold = { fg = colors.yellow, bold = true },
+    Colour4 = { fg = colors.pink },
+    Colour4Bold = { fg = colors.pink, bold = true },
+    Colour5 = { fg = colors.blue },
+    Colour5Bold = { fg = colors.blue, bold = true },
+    Colour6 = { fg = colors.cyan },
+    Colour6Bold = { fg = colors.cyan, bold = true },
+    Colour7 = { fg = colors.red },
+    Colour7Bold = { fg = colors.red, bold = true },
+    -- KoreRedSign = config.transparent_mode and { fg = colors.red_normal, reverse = config.invert_signs }
+    --   or { fg = colors.red_normal, bg = colors.dark_normal, reverse = config.invert_signs },
+    -- KoreGreenSign = config.transparent_mode and { fg = colors.green_normal, reverse = config.invert_signs }
+    --   or { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_signs },
+    -- KoreYellowSign = config.transparent_mode and { fg = colors.yellow_normal, reverse = config.invert_signs }
+    --   or { fg = colors.yellow_normal, bg = colors.dark_normal, reverse = config.invert_signs },
+    -- KoreBlueSign = config.transparent_mode and { fg = colors.blue_normal, reverse = config.invert_signs }
+    --   or { fg = colors.blue_normal, bg = colors.dark_normal, reverse = config.invert_signs },
+    -- KorePinkSign = config.transparent_mode and { fg = colors.pink_normal, reverse = config.invert_signs }
+    --   or { fg = colors.pink_normal, bg = colors.dark_normal, reverse = config.invert_signs },
+    -- KoreCyanSign = config.transparent_mode and { fg = colors.cyan_normal, reverse = config.invert_signs }
+    --   or { fg = colors.cyan_normal, bg = colors.dark_normal, reverse = config.invert_signs },
+    -- KoreOrangeSign = config.transparent_mode and { fg = colors.orange_normal, reverse = config.invert_signs }
+    --   or { fg = colors.orange_normal, bg = colors.dark_normal, reverse = config.invert_signs },
+    Undercurl = { undercurl = true, sp = colors.foreground_alt },
+    WarningUndercurl = { undercurl = true, sp = colors.orange },
+    ErrorUndercurl = { undercurl = true, sp = colors.red },
 
     -- vim
     Normal = { fg = colors.foreground, bg = colors.background }, -- basic foreground and background
@@ -276,11 +259,11 @@ local function get_groups()
     -- Conditional = { link = "KoreOrange" },
     -- Repeat = { link = "KoreOrange" },
     -- Label = { link = "KoreYellow" },
-    -- Exception = { link = "KoreOrange" },
-    -- Operator = { link = "KoreOrange" },
-    -- Keyword = { link = "KoreOrange" },
-    -- Identifier = { link = "KoreForegorund" },
-    -- Function = { link = "KoreFunction" },
+    Exception = { link = "Colour1" },
+    Operator = { link = "Colour1" },
+    Keyword = { link = "Colour1" },
+    Identifier = { link = "Normal" },
+    Function = { link = "Colour2" },
     -- PreProc = { link = "KorePink" },
     -- Include = { link = "KoreOrange" },
     -- Define = { link = "KoreCyan" }, -- used in langauges like c
