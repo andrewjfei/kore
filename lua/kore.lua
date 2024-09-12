@@ -255,7 +255,7 @@ local function get_groups()
     -- WildMenu = { fg = colors.blue_normal, bg = colors.dark_light, bold = config.bold },
     Directory = { link = "Colour2Bold" },
     Title = { link = "Colour1Bold" },
-    ErrorMsg = { link = "Colour4" },
+    ErrorMsg = { link = "Colour7" },
     -- MoreMsg = { link = "KoreYellowBold" },
     -- ModeMsg = { link = "KoreYellowBold" },
     -- Question = { link = "KoreOrangeBold" },
