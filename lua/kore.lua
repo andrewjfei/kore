@@ -197,9 +197,9 @@ local function get_groups()
     Background1 = { bg = colors.background },
     Background2 = { bg = colors.background_alt },
     Background3 = { bg = colors.background_alt2 },
-    Background1Foreground = { fg = colors.foreground, bg = colors.background },
-    Background2Foreground = { fg = colors.foreground, bg = colors.background_alt },
-    Background3Foreground = { fg = colors.foreground, bg = colors.background_alt2 },
+    Background1Foreground1 = { fg = colors.foreground, bg = colors.background },
+    Background2Foreground1 = { fg = colors.foreground, bg = colors.background_alt },
+    Background3Foreground1 = { fg = colors.foreground, bg = colors.background_alt2 },
     Background1Colour1 = { fg = colors.orange, bg = colors.background },
     Background2Colour1 = { fg = colors.orange, bg = colors.background_alt },
     Background3Colour1 = { fg = colors.orange, bg = colors.background_alt2 },
@@ -225,7 +225,7 @@ local function get_groups()
     ErrorUndercurl = { undercurl = true, sp = colors.red },
 
     -- vim
-    Normal = { link = "Background1" }, -- basic foreground and background
+    Normal = { link = "Background1Foreground" }, -- basic foreground and background
     -- NormalFloat = config.transparent_mode and { fg = colors.foreground, bg = nil } or { fg = colors.foreground, bg = colors.dark_normal }, -- floating windows
     -- NormalNC = config.dim_inactive and { fg = colors.gray, bg = colors.dark_normal } or { link = "Normal" }, -- normal text it non-current windows
     -- CursorLine = { bg = colors.dark_normal }, -- background for line under cursor
@@ -239,10 +239,10 @@ local function get_groups()
     -- CursorLineNr = { fg = colors.yellow_normal, bg = colors.dark_normal },
     -- NonText = { link = "KoreComment" },
     SpecialKey = { link = "Colour1" },
-    Visual = { link = "Colour4" },
+    Visual = { link = "Background3" },
     -- VisualNOS = { link = "Visual" },
-    Search = { link = "Colour3Background" },
-    IncSearch = { link = "Colour1Background" },
+    Search = { link = "Colour3AltBackground2" },
+    IncSearch = { link = "Colour1AltBackground2" },
     CurSearch = { link = "IncSearch" },
     -- QuickFixLine = { link = "KorePink" },
     -- Underlined = { fg = colors.blue_normal, underline = config.underline },
@@ -277,7 +277,7 @@ local function get_groups()
     Repeat = { link = "Colour1" },
     Label = { link = "Colour3" },
     Exception = { link = "Colour1" },
-    Operator = { link = "Foreground" },
+    Operator = { link = "Foreground1" },
     Keyword = { link = "Colour1" },
     Identifier = { link = "Normal" },
     Function = { link = "Colour2" },
@@ -296,7 +296,7 @@ local function get_groups()
     -- StorageClass = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Structure = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Typedef = { link = "KoreCyan" }, -- to change when encountered in c or rust
-    Pmenu = { link = "Background2Foreground" },
+    Pmenu = { link = "Background2Foreground1" },
     PmenuSel = { link = "Colour1Background2" },
     -- PmenuSbar = { bg = colors.dark_light },
     -- PmenuThumb = { bg = colors.light_dark },
@@ -520,7 +520,7 @@ local function get_groups()
     -- telescope
     TelescopeNormal = { link = "Background1" },
     TelescopeSelection = { link = "Background2Colour1" },
-    TelescopeSelectionCaret = { link = "Colour1" },
+    TelescopeSelectionCaret = { link = "Background2Colour1" },
     TelescopeMultiSelection = { link = "Foreground4" },
     TelescopeBorder = { link = "TelescopeNormal" },
     TelescopePromptBorder = { link = "TelescopeNormal" },
