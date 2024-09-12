@@ -289,19 +289,19 @@ local function get_groups()
     Function = { link = "KoreFunction" },
     PreProc = { link = "KorePink" },
     Include = { link = "KoreOrange" },
-    Define = { link = "KoreCyan" },
-    Macro = { link = "KoreCyan" },
-    PreCondit = { link = "KoreCyan" },
+    Define = { link = "KoreCyan" }, -- used in langauges like c
+    Macro = { link = "KoreCyan" }, -- used in languages like c
+    PreCondit = { link = "KoreCyan" }, -- used in languages like c
     Constant = { link = "KorePink" },
-    Character = { link = "KoreForeground" },
+    Character = { link = "KoreYellow" },
     String = { link = "KoreYellow" },
-    Boolean = { link = "KorePink" },
+    Boolean = { link = "KoreBlue" },
     Number = { link = "KorePink" },
     Float = { link = "KorePink" },
-    Type = { link = "KoreYellow" },
-    StorageClass = { link = "KorePink" },
-    Structure = { link = "KoreCyan" },
-    Typedef = { link = "KoreYellow" },
+    Type = { link = "KoreRed" },
+    StorageClass = { link = "KoreCyan" }, -- to change when encountered in c or rust
+    Structure = { link = "KoreCyan" }, -- to change when encountered in c or rust
+    Typedef = { link = "KoreCyan" }, -- to change when encountered in c or rust
     Pmenu = { fg = colors.foreground, bg = colors.dark_light },
     PmenuSel = { fg = colors.dark_light, bg = colors.blue_normal, bold = config.bold },
     PmenuSbar = { bg = colors.dark_light },
