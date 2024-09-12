@@ -181,6 +181,7 @@ local function get_groups()
   end
 
   local groups = {
+    -- colour variables
     KoreFg0 = { fg = colors.gray },
     KoreForeground = { fg = colors.foreground },
     KoreFg2 = { fg = colors.light_normal },
@@ -227,11 +228,13 @@ local function get_groups()
     KorePinkUnderline = { undercurl = config.undercurl, sp = colors.pink_normal },
     KoreCyanUnderline = { undercurl = config.undercurl, sp = colors.cyan_normal },
     KoreOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange_normal },
-    Normal = { fg = colors.foreground, bg = colors.background },
-    NormalFloat = config.transparent_mode and { fg = colors.foreground, bg = nil } or { fg = colors.foreground, bg = colors.dark_normal },
-    NormalNC = config.dim_inactive and { fg = colors.gray, bg = colors.dark_normal } or { link = "Normal" },
-    CursorLine = { bg = colors.dark_normal },
-    CursorColumn = { link = "CursorLine" },
+
+    -- vim
+    Normal = { fg = colors.foreground, bg = colors.background }, -- basic foreground and background
+    NormalFloat = config.transparent_mode and { fg = colors.foreground, bg = nil } or { fg = colors.foreground, bg = colors.dark_normal }, -- floating windows
+    NormalNC = config.dim_inactive and { fg = colors.gray, bg = colors.dark_normal } or { link = "Normal" }, -- normal text it non-current windows
+    CursorLine = { bg = colors.dark_normal }, -- background for line under cursor
+    CursorColumn = { link = "CursorLine" }, 
     TabLineFill = { fg = colors.light_dark, bg = colors.dark_normal, reverse = config.invert_tabline },
     TabLineSel = { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_tabline },
     TabLine = { link = "TabLineFill" },
@@ -311,6 +314,8 @@ local function get_groups()
     SpellLocal = { link = "KoreCyanUnderline" },
     SpellRare = { link = "KorePinkUnderline" },
     Whitespace = { fg = colors.dark_light },
+
+    -- lsp
     Delimiter = { link = "KoreForeground" },
     EndOfBuffer = { link = "NonText" },
     DiagnosticError = { link = "KoreRed" },
@@ -341,9 +346,13 @@ local function get_groups()
     LspSignatureActiveParameter = { link = "Search" },
     gitcommitSelectedFile = { link = "KoreGreen" },
     gitcommitDiscardedFile = { link = "KoreRed" },
+    
+    -- gitsigns
     GitSignsAdd = { link = "KoreGreen" },
     GitSignsChange = { link = "KoreOrange" },
     GitSignsDelete = { link = "KoreRed" },
+
+    -- nvimtree		
     NvimTreeSymlink = { fg = colors.cyan_dark },
     NvimTreeRootFolder = { fg = colors.pink_dark, bold = true },
     NvimTreeFolderIcon = { fg = colors.blue_dark, bold = true },
@@ -362,6 +371,8 @@ local function get_groups()
     NvimTreeWindowPicker = { bg = colors.cyan_normal },
     debugPC = { link = "DiffAdd" },
     debugBreakpoint = { link = "KoreRedSign" },
+    
+    -- startify
     StartifyBracket = { link = "KoreFg3" },
     StartifyFile = { link = "KoreForeground" },
     StartifyNumber = { link = "KoreBlue" },
@@ -373,8 +384,12 @@ local function get_groups()
     StartifyFooter = { link = "KoreBg2" },
     StartifyVar = { link = "StartifyPath" },
     StartifySelect = { link = "Title" },
+
+    -- dirvish
     DirvishPathTail = { link = "KoreCyan" },
     DirvishArg = { link = "KoreYellow" },
+
+    -- netrw
     netrwDir = { link = "KoreCyan" },
     netrwClassify = { link = "KoreCyan" },
     netrwLink = { link = "KoreGray" },
@@ -385,6 +400,8 @@ local function get_groups()
     netrwHelpCmd = { link = "KoreCyan" },
     netrwCmdSep = { link = "KoreFg3" },
     netrwVersion = { link = "KoreGreen" },
+		
+    -- NERDTree
     NERDTreeDir = { link = "KoreCyan" },
     NERDTreeDirSlash = { link = "KoreCyan" },
     NERDTreeOpenable = { link = "KoreOrange" },
@@ -396,6 +413,8 @@ local function get_groups()
     NERDTreeHelp = { link = "KoreForeground" },
     NERDTreeToggleOn = { link = "KoreGreen" },
     NERDTreeToggleOff = { link = "KoreRed" },
+
+    -- coc
     CocErrorSign = { link = "KoreRedSign" },
     CocWarningSign = { link = "KoreOrangeSign" },
     CocInfoSign = { link = "KoreBlueSign" },
@@ -415,6 +434,8 @@ local function get_groups()
     CocWarningHighlight = { link = "KoreOrangeUnderline" },
     CocInfoHighlight = { link = "KoreBlueUnderline" },
     CocHintHighlight = { link = "KoreCyanUnderline" },
+
+    -- telescope
     TelescopeNormal = { link = "KoreForeground" },
     TelescopeSelection = { link = "KoreOrangeBold" },
     TelescopeSelectionCaret = { link = "KoreRed" },
@@ -426,6 +447,8 @@ local function get_groups()
     TelescopeMatching = { link = "KoreBlue" },
     TelescopePromptPrefix = { link = "KoreRed" },
     TelescopePrompt = { link = "TelescopeNormal" },
+
+    -- cmp
     CmpItemAbbr = { link = "KoreFg0" },
     CmpItemAbbrDeprecated = { link = "KoreForeground" },
     CmpItemAbbrMatch = { link = "KoreBlueBold" },
@@ -456,6 +479,8 @@ local function get_groups()
     CmpItemKindConstant = { link = "KoreOrange" },
     CmpItemKindStruct = { link = "KoreYellow" },
     CmpItemKindTypeParameter = { link = "KoreYellow" },
+
+    -- diff
     diffAdded = { link = "DiffAdd" },
     diffRemoved = { link = "DiffDelete" },
     diffChanged = { link = "DiffChange" },
@@ -464,6 +489,8 @@ local function get_groups()
     diffOldFile = { link = "KoreOrange" },
     diffLine = { link = "KoreBlue" },
     diffIndexLine = { link = "diffChanged" },
+        
+    -- navicicons
     NavicIconsFile = { link = "KoreBlue" },
     NavicIconsModule = { link = "KoreOrange" },
     NavicIconsNamespace = { link = "KoreBlue" },
@@ -492,6 +519,8 @@ local function get_groups()
     NavicIconsTypeParameter = { link = "KoreRed" },
     NavicText = { link = "KoreWhite" },
     NavicSeparator = { link = "KoreWhite" },
+
+    -- html
     htmlTag = { link = "KoreCyanBold" },
     htmlEndTag = { link = "KoreCyanBold" },
     htmlTagName = { link = "KoreBlue" },
@@ -518,6 +547,8 @@ local function get_groups()
       underline = config.underline,
     },
     htmlItalic = { fg = colors.gray, bg = colors.background, italic = true },
+
+    -- xml
     xmlTag = { link = "KoreCyanBold" },
     xmlEndTag = { link = "KoreCyanBold" },
     xmlTagName = { link = "KoreBlue" },
@@ -536,6 +567,8 @@ local function get_groups()
     xmlAttribPunct = { link = "KoreGray" },
     xmlEntity = { link = "KoreRed" },
     xmlEntityPunct = { link = "KoreRed" },
+
+    -- clojure
     clojureKeyword = { link = "KoreBlue" },
     clojureCond = { link = "KoreOrange" },
     clojureSpecial = { link = "KoreOrange" },
@@ -558,9 +591,15 @@ local function get_groups()
     clojureDeref = { link = "KoreYellow" },
     clojureQuote = { link = "KoreYellow" },
     clojureUnquote = { link = "KoreYellow" },
+    
+    -- c
     cOperator = { link = "KorePink" },
-    cppOperator = { link = "KorePink" },
     cStructure = { link = "KoreOrange" },
+
+    -- c++
+    cppOperator = { link = "KorePink" },
+
+    -- python
     pythonBuiltin = { link = "KoreOrange" },
     pythonBuiltinObj = { link = "KoreOrange" },
     pythonBuiltinFunc = { link = "KoreOrange" },
@@ -578,6 +617,8 @@ local function get_groups()
     pythonConditional = { link = "KoreRed" },
     pythonRepeat = { link = "KoreRed" },
     pythonDottedName = { link = "KoreGreenBold" },
+
+    -- css
     cssBraces = { link = "KoreBlue" },
     cssFunctionName = { link = "KoreYellow" },
     cssIdentifier = { link = "KoreOrange" },
@@ -608,6 +649,8 @@ local function get_groups()
     cssRenderProp = { link = "KoreCyan" },
     cssColorProp = { link = "KoreCyan" },
     cssGeneratedContentProp = { link = "KoreCyan" },
+
+    -- javascript
     javaScriptBraces = { link = "KoreForeground" },
     javaScriptFunction = { link = "KoreRed" },
     javaScriptIdentifier = { link = "KoreOrange" },
@@ -615,6 +658,8 @@ local function get_groups()
     javaScriptNumber = { link = "KorePink" },
     javaScriptNull = { link = "KorePink" },
     javaScriptParens = { link = "KoreFg3" },
+
+    -- typescript
     typescriptReserved = { link = "KoreCyan" },
     typescriptLabel = { link = "KoreCyan" },
     typescriptFuncKeyword = { link = "KoreCyan" },
@@ -633,6 +678,8 @@ local function get_groups()
     typescriptHtmlElemProperties = { link = "KoreForeground" },
     typescriptNull = { link = "KorePink" },
     typescriptInterpolationDelimiter = { link = "KoreCyan" },
+
+    -- purescript
     purescriptModuleKeyword = { link = "KoreCyan" },
     purescriptModuleName = { link = "KoreForeground" },
     purescriptWhere = { link = "KoreCyan" },
@@ -648,28 +695,40 @@ local function get_groups()
     purescriptFunction = { link = "KoreForeground" },
     purescriptConditional = { link = "KoreOrange" },
     purescriptBacktick = { link = "KoreOrange" },
+
+    -- coffeescript
     coffeeExtendedOp = { link = "KoreFg3" },
     coffeeSpecialOp = { link = "KoreFg3" },
     coffeeCurly = { link = "KoreOrange" },
     coffeeParen = { link = "KoreFg3" },
     coffeeBracket = { link = "KoreOrange" },
+
+    -- ruby
     rubyStringDelimiter = { link = "KoreGreen" },
     rubyInterpolationDelimiter = { link = "KoreCyan" },
     rubyDefinedOperator = { link = "rubyKeyword" },
     objcTypeModifier = { link = "KoreRed" },
     objcDirective = { link = "KoreBlue" },
+
+    -- go
     goDirective = { link = "KoreCyan" },
     goConstants = { link = "KorePink" },
     goDeclaration = { link = "KoreRed" },
     goDeclType = { link = "KoreBlue" },
     goBuiltins = { link = "KoreOrange" },
+
+    -- lua
     luaIn = { link = "KoreRed" },
     luaFunction = { link = "KoreCyan" },
     luaTable = { link = "KoreOrange" },
+
+    -- moonscript
     moonSpecialOp = { link = "KoreFg3" },
     moonExtendedOp = { link = "KoreFg3" },
     moonFunction = { link = "KoreFg3" },
     moonObject = { link = "KoreYellow" },
+
+    -- java
     javaAnnotation = { link = "KoreBlue" },
     javaDocTags = { link = "KoreCyan" },
     javaCommentTitle = { link = "vimCommentTitle" },
@@ -681,10 +740,14 @@ local function get_groups()
     javaParen5 = { link = "KoreFg3" },
     javaOperator = { link = "KoreOrange" },
     javaVarArg = { link = "KoreGreen" },
+
+    -- elixir
     elixirDocString = { link = "Comment" },
     elixirStringDelimiter = { link = "KoreGreen" },
     elixirInterpolationDelimiter = { link = "KoreCyan" },
     elixirModuleDeclaration = { link = "KoreYellow" },
+
+    -- scala
     scalaNameDefinition = { link = "KoreForeground" },
     scalaCaseFollowing = { link = "KoreForeground" },
     scalaCapitalWord = { link = "KoreForeground" },
@@ -697,6 +760,8 @@ local function get_groups()
     scalaTypeTypePostDeclaration = { link = "KoreYellow" },
     scalaInstanceDeclaration = { link = "KoreForeground" },
     scalaInterpolation = { link = "KoreCyan" },
+
+    -- markdown
     markdownItalic = { fg = colors.foreground, italic = true },
     markdownBold = { fg = colors.foreground, bold = config.bold },
     markdownBoldItalic = { fg = colors.foreground, bold = config.bold, italic = true },
@@ -722,6 +787,8 @@ local function get_groups()
     markdownUrlTitleDelimiter = { link = "KoreGreen" },
     markdownLinkText = { fg = colors.gray, underline = config.underline },
     markdownIdDeclaration = { link = "markdownLinkText" },
+
+    -- haskell
     haskellType = { link = "KoreBlue" },
     haskellIdentifier = { link = "KoreCyan" },
     haskellSeparator = { link = "KoreFg4" },
@@ -756,10 +823,14 @@ local function get_groups()
     haskellTypeRoles = { link = "KoreRedBold" },
     haskellTypeForall = { link = "KoreRed" },
     haskellPatternKeyword = { link = "KoreBlue" },
+
+    -- json
     jsonKeyword = { link = "KoreGreen" },
     jsonQuote = { link = "KoreGreen" },
     jsonBraces = { link = "KoreForeground" },
     jsonString = { link = "KoreForeground" },
+
+    -- mail    
     mailQuoted1 = { link = "KoreCyan" },
     mailQuoted2 = { link = "KorePink" },
     mailQuoted3 = { link = "KoreYellow" },
@@ -767,6 +838,8 @@ local function get_groups()
     mailQuoted5 = { link = "KoreRed" },
     mailQuoted6 = { link = "KoreOrange" },
     mailSignature = { link = "Comment" },
+
+    -- c#
     csBraces = { link = "KoreForeground" },
     csEndColon = { link = "KoreForeground" },
     csLogicSymbols = { link = "KoreForeground" },
@@ -776,6 +849,8 @@ local function get_groups()
     csInterpolationAlignDel = { link = "KoreCyanBold" },
     csInterpolationFormat = { link = "KoreCyan" },
     csInterpolationFormatDel = { link = "KoreCyanBold" },
+
+    -- rust
     rustSigil = { link = "KoreOrange" },
     rustEscape = { link = "KoreCyan" },
     rustStringContinuation = { link = "KoreCyan" },
@@ -784,11 +859,15 @@ local function get_groups()
     rustModPathSep = { link = "KoreFg2" },
     rustCommentLineDoc = { link = "Comment" },
     rustDefault = { link = "KoreCyan" },
+
+    -- ocaml
     ocamlOperator = { link = "KoreForeground" },
     ocamlKeyChar = { link = "KoreOrange" },
     ocamlArrow = { link = "KoreOrange" },
     ocamlInfixOpKeyword = { link = "KoreRed" },
     ocamlConstructor = { link = "KoreOrange" },
+
+    -- lspsaga
     LspSagaCodeActionTitle = { link = "Title" },
     LspSagaCodeActionBorder = { link = "KoreForeground" },
     LspSagaCodeActionContent = { fg = colors.green_normal, bold = config.bold },
@@ -804,10 +883,14 @@ local function get_groups()
     LspSagaDiagnosticHeader = { link = "KoreGreen" },
     LspSagaSignatureHelpBorder = { link = "KoreGreen" },
     SagaShadow = { link = "KoreBackground" },
+
+    -- dashboard
     DashboardShortCut = { link = "KoreOrange" },
     DashboardHeader = { link = "KoreCyan" },
     DashboardCenter = { link = "KoreYellow" },
     DashboardFooter = { fg = colors.pink_normal, italic = true },
+    
+    -- mason    
     MasonHighlight = { link = "KoreCyan" },
     MasonHighlightBlock = { fg = colors.background, bg = colors.blue_normal },
     MasonHighlightBlockBold = { fg = colors.background, bg = colors.blue_normal, bold = true },
@@ -819,7 +902,11 @@ local function get_groups()
     MasonMuted = { fg = colors.fg4 },
     MasonMutedBlock = { fg = colors.background, bg = colors.fg4 },
     MasonMutedBlockBold = { fg = colors.background, bg = colors.fg4, bold = true },
+
+    -- lspinlayhints
     LspInlayHint = { link = "comment" },
+
+    -- carbon
     CarbonFile = { link = "KoreForeground" },
     CarbonExe = { link = "KoreYellow" },
     CarbonSymlink = { link = "KoreCyan" },
@@ -827,7 +914,11 @@ local function get_groups()
     CarbonIndicator = { link = "KoreGray" },
     CarbonDanger = { link = "KoreRed" },
     CarbonPending = { link = "KoreYellow" },
+
+    -- noice
     NoiceCursor = { link = "TermCursor" },
+
+    -- notify
     NotifyDEBUGBorder = { link = "KoreBlue" },
     NotifyDEBUGIcon = { link = "KoreBlue" },
     NotifyDEBUGTitle = { link = "KoreBlue" },
@@ -843,9 +934,13 @@ local function get_groups()
     NotifyWARNBorder = { link = "KoreYellow" },
     NotifyWARNIcon = { link = "KoreYellow" },
     NotifyWARNTitle = { link = "KoreYellow" },
+
+    -- illuminated
     IlluminatedWordText = { link = "LspReferenceText" },
     IlluminatedWordRead = { link = "LspReferenceRead" },
     IlluminatedWordWrite = { link = "LspReferenceWrite" },
+    
+    -- ts (not typescript)
     TSRainbowRed = { fg = colors.red_normal },
     TSRainbowOrange = { fg = colors.orange_normal },
     TSRainbowYellow = { fg = colors.yellow_normal },
@@ -853,6 +948,8 @@ local function get_groups()
     TSRainbowBlue = { fg = colors.blue_normal },
     TSRainbowViolet = { fg = colors.pink_normal },
     TSRainbowCyan = { fg = colors.cyan_normal },
+
+    -- rainbow
     RainbowDelimiterRed = { fg = colors.red_normal },
     RainbowDelimiterOrange = { fg = colors.orange_normal },
     RainbowDelimiterYellow = { fg = colors.yellow_normal },
@@ -860,6 +957,8 @@ local function get_groups()
     RainbowDelimiterBlue = { fg = colors.blue_normal },
     RainbowDelimiterViolet = { fg = colors.pink_normal },
     RainbowDelimiterCyan = { fg = colors.cyan_normal },
+
+    -- dap
     DapBreakpointSymbol = { fg = colors.red_normal, bg = colors.dark_normal },
     DapStoppedSymbol = { fg = colors.green_normal, bg = colors.dark_normal },
     DapUIBreakpointsCurrentLine = { link = "KoreYellow" },
@@ -890,13 +989,19 @@ local function get_groups()
     DapUIWatchesError = { link = "KoreRed" },
     DapUIWatchesValue = { link = "KoreYellow" },
     DapUIWinSelect = { link = "KoreYellow" },
+
+    -- neogit
     NeogitDiffDelete = { link = "DiffDelete" },
     NeogitDiffAdd = { link = "DiffAdd" },
     NeogitHunkHeader = { link = "WinBar" },
     NeogitHunkHeaderHighlight = { link = "WinBarNC" },
+
+    -- diffview    
     DiffviewStatusModified = { link = "KoreGreenBold" },
     DiffviewFilePanelInsertions = { link = "KoreGreenBold" },
     DiffviewFilePanelDeletions = { link = "KoreRedBold" },
+
+    -- mini
     MiniAnimateCursor = { reverse = true, nocombine = true },
     MiniAnimateNormalFloat = { fg = colors.foreground, bg = colors.dark_normal },
     MiniClueBorder = { link = "FloatBorder" },
@@ -1012,6 +1117,8 @@ local function get_groups()
     MiniTestFail = { link = "KoreRedBold" },
     MiniTestPass = { link = "KoreGreenBold" },
     MiniTrailspace = { bg = colors.red_normal },
+
+    -- treesitter
     ["@comment"] = { link = "Comment" },
     ["@none"] = { bg = "NONE", fg = "NONE" },
     ["@preproc"] = { link = "PreProc" },
