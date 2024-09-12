@@ -175,20 +175,27 @@ local function get_groups()
 
   local groups = {
     -- colour variables
+    Foreground1 = { fg = colors.foreground }
+    Foreground2= { fg = colors.foreground_alt }
+    Foreground3 = { fg = colors.foreground_alt2 }
+    Foreground4 = { fg = colors.background_alt2 }
+    Foreground5 = { fg = colors.background_alt1 }
     Colour1 = { fg = colors.orange },
-    Colour1Bold = { fg = colors.orange, bold = true },
     Colour2 = { fg = colors.green },
-    Colour2Bold = { fg = colors.green, bold = true },
     Colour3 = { fg = colors.yellow },
-    Colour3Bold = { fg = colors.yellow, bold = true },
     Colour4 = { fg = colors.pink },
-    Colour4Bold = { fg = colors.pink, bold = true },
     Colour5 = { fg = colors.blue },
-    Colour5Bold = { fg = colors.blue, bold = true },
     Colour6 = { fg = colors.cyan },
-    Colour6Bold = { fg = colors.cyan, bold = true },
     Colour7 = { fg = colors.red },
+    Colour1Bold = { fg = colors.orange, bold = true },
+    Colour2Bold = { fg = colors.green, bold = true },
+    Colour3Bold = { fg = colors.yellow, bold = true },
+    Colour4Bold = { fg = colors.pink, bold = true },
+    Colour5Bold = { fg = colors.blue, bold = true },
+    Colour6Bold = { fg = colors.cyan, bold = true },
     Colour7Bold = { fg = colors.red, bold = true },
+    Colour1Background = { fg = colors.background_alt, bg = colors.orange },
+    Colour3Background = { fg = colors.background_alt, bg = colors.yellow },
     -- KoreRedSign = config.transparent_mode and { fg = colors.red_normal, reverse = config.invert_signs }
     --   or { fg = colors.red_normal, bg = colors.dark_normal, reverse = config.invert_signs },
     -- KoreGreenSign = config.transparent_mode and { fg = colors.green_normal, reverse = config.invert_signs }
@@ -224,9 +231,9 @@ local function get_groups()
     -- SpecialKey = { link = "KoreFg4" },
     -- Visual = { bg = colors.dark_light, reverse = config.invert_selection },
     -- VisualNOS = { link = "Visual" },
-    -- Search = { fg = colors.background, bg = colors.yellow_normal },
-    -- IncSearch = { fg = colors.background, bg = colors.orange_normal },
-    -- CurSearch = { link = "IncSearch" },
+    Search = { link = "Colour3Background" },
+    IncSearch = { link = "Colour1Background" },
+    CurSearch = { link = "IncSearch" },
     -- QuickFixLine = { link = "KorePink" },
     -- Underlined = { fg = colors.blue_normal, underline = config.underline },
     -- StatusLine = { fg = colors.dark_light, bg = colors.foreground, reverse = config.inverse },
@@ -235,14 +242,14 @@ local function get_groups()
     -- WinBarNC = { fg = colors.foreground, bg = colors.dark_normal },
     -- WinSeparator = { fg = colors.orange_normal, bg = nil },
     -- WildMenu = { fg = colors.blue_normal, bg = colors.dark_light, bold = config.bold },
-    -- Directory = { link = "KoreGreenBold" },
-    -- Title = { link = "KoreOrangeBold" },
+    Directory = { link = "Colour2Bold" },
+    Title = { link = "Colour1Bold" },
     -- ErrorMsg = { fg = colors.foreground, bg = colors.red_normal, bold = config.bold },
     -- MoreMsg = { link = "KoreYellowBold" },
     -- ModeMsg = { link = "KoreYellowBold" },
     -- Question = { link = "KoreOrangeBold" },
     -- WarningMsg = { link = "KoreRedBold" },
-    -- LineNr = { fg = colors.light_dark },
+    LineNr = { link = "Foreground3" },
     -- SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.dark_normal },
     -- Folded = { fg = colors.orange_normal, bg = colors.dark_normal },
     -- FoldColumn = { fg = colors.yellow_normal, bg = colors.dark_normal },
@@ -255,27 +262,27 @@ local function get_groups()
     -- Todo = { fg = colors.yellow_normal, bold = true }, -- todo text in comments
     -- Done = { fg = colors.dark_normal, bg = colors.green_normal, bold = true },
     -- Error = { fg = colors.dark_normal, bg = colors.red_normal, bold = true },
-    -- Statement = { link = "KoreOrange" },
-    -- Conditional = { link = "KoreOrange" },
-    -- Repeat = { link = "KoreOrange" },
-    -- Label = { link = "KoreYellow" },
+    Statement = { link = "Colour1" },
+    Conditional = { link = "Colour1" },
+    Repeat = { link = "Colour1" },
+    Label = { link = "Colour3" },
     Exception = { link = "Colour1" },
     Operator = { link = "Colour1" },
     Keyword = { link = "Colour1" },
     Identifier = { link = "Normal" },
     Function = { link = "Colour2" },
     -- PreProc = { link = "KorePink" },
-    -- Include = { link = "KoreOrange" },
+    Include = { link = "Colour1" },
     -- Define = { link = "KoreCyan" }, -- used in langauges like c
     -- Macro = { link = "KoreCyan" }, -- used in languages like c
     -- PreCondit = { link = "KoreCyan" }, -- used in languages like c
-    -- Constant = { link = "KorePink" },
-    -- Character = { link = "KoreYellow" },
-    -- String = { link = "KoreYellow" },
-    -- Boolean = { link = "KoreBlue" },
-    -- Number = { link = "KorePink" },
-    -- Float = { link = "KorePink" },
-    -- Type = { link = "KorePink" },
+    Constant = { link = "Colour4" },
+    Character = { link = "Colour3" },
+    String = { link = "Colour3" },
+    Boolean = { link = "Colour5" },
+    Number = { link = "Colour4" },
+    Float = { link = "Colour4" },
+    Type = { link = "Colour4" },
     -- StorageClass = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Structure = { link = "KoreCyan" }, -- to change when encountered in c or rust
     -- Typedef = { link = "KoreCyan" }, -- to change when encountered in c or rust
