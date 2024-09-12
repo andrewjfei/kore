@@ -200,7 +200,7 @@ local function get_groups()
     KoreGreenBold = { fg = colors.green_normal, bold = config.bold },
     KoreYellow = { fg = colors.yellow_normal },
     KoreYellowBold = { fg = colors.yellow_normal, bold = config.bold },
-    KoreBlue = { fg = colors.blue_normal },
+    KoreBlue = { fg = colors.blue_cyan },
     KoreBlueBold = { fg = colors.blue_normal, bold = config.bold },
     KorePink = { fg = colors.pink_normal },
     KorePinkBold = { fg = colors.pink_normal, bold = config.bold },
@@ -298,7 +298,7 @@ local function get_groups()
     Boolean = { link = "KoreBlue" },
     Number = { link = "KorePink" },
     Float = { link = "KorePink" },
-    Type = { link = "KoreRed" },
+    Type = { link = "KorePink" },
     StorageClass = { link = "KoreCyan" }, -- to change when encountered in c or rust
     Structure = { link = "KoreCyan" }, -- to change when encountered in c or rust
     Typedef = { link = "KoreCyan" }, -- to change when encountered in c or rust
