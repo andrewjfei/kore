@@ -191,7 +191,7 @@ local function get_groups()
     KoreGray = { fg = colors.gray },
     KoreBackground = { fg = colors.background },
     KoreBg1 = { fg = colors.dark_normal },
-    KoreComment = { fg = colors.dark_light },
+    KoreComment = { fg = colors.light_dark },
     KoreBg3 = { fg = colors.bg3 },
     KoreBg4 = { fg = colors.light_dark },
     KoreRed = { fg = colors.red_normal },
@@ -200,7 +200,7 @@ local function get_groups()
     KoreGreenBold = { fg = colors.green_normal, bold = config.bold },
     KoreYellow = { fg = colors.yellow_normal },
     KoreYellowBold = { fg = colors.yellow_normal, bold = config.bold },
-    KoreBlue = { fg = colors.blue_cyan },
+    KoreBlue = { fg = colors.cyan_normal },
     KoreBlueBold = { fg = colors.blue_normal, bold = config.bold },
     KorePink = { fg = colors.pink_normal },
     KorePinkBold = { fg = colors.pink_normal, bold = config.bold },
@@ -361,12 +361,12 @@ local function get_groups()
 
     -- javascript
     javaScriptBraces = { link = "KoreForeground" },
-    javaScriptFunction = { link = "KoreRed" },
+    javaScriptFunction = { link = "KorePink" },
     javaScriptIdentifier = { link = "KoreOrange" },
-    javaScriptMember = { link = "KoreBlue" },
+    javaScriptMember = { link = "KoreCyan" },
     javaScriptNumber = { link = "KorePink" },
     javaScriptNull = { link = "KorePink" },
-    javaScriptParens = { link = "KoreFg3" },
+    javaScriptParens = { link = "KoreGreen" },
 
     -- typescript
     typescriptReserved = { link = "KoreCyan" },
