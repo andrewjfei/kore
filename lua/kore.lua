@@ -144,7 +144,7 @@ local function get_colors()
       blue_dark = p.blue_dark,
       pink_dark = p.pink_dark,
       cyan_dark = p.cyan_dark,
-      orange_light = p.orange_dark,
+      orange_dark = p.orange_dark,
       gray = p.gray,
     }
   }
@@ -307,10 +307,10 @@ local function get_groups()
     PmenuSel = { fg = colors.dark_light, bg = colors.orange_normal, bold = config.bold },
     PmenuSbar = { bg = colors.dark_light },
     PmenuThumb = { bg = colors.light_dark },
-    DiffDelete = { bg = colors.red_dark },
-    DiffAdd = { bg = colors.green_dark },
-    DiffChange = { bg = colors.cyan_dark },
-    DiffText = { bg = colors.yellow_normal, fg = colors.background },
+    DiffDelete = { fg = colors.background, bg = colors.red_dark },
+    DiffAdd = { fg = colors.background = bg = colors.green_dark },
+    DiffChange = { fg = colors.background, bg = colors.cyan_dark },
+    DiffText = { fg = colors.foreground, bg = colors.yellow_normal },
     SpellCap = { link = "KoreOrangeUnderline" },
     SpellBad = { link = "KoreRedUnderline" },
     SpellLocal = { link = "KoreYellowUnderline" },
