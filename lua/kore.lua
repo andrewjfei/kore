@@ -186,7 +186,7 @@ local function get_groups()
     Colour4 = { fg = colors.pink },
     Colour5 = { fg = colors.blue },
     Colour6 = { fg = colors.cyan },
-    Colour7 = { fg = colors.red },
+    Colour7 = { fg = colors.red_alt },
     Colour1Bold = { fg = colors.orange, bold = true },
     Colour2Bold = { fg = colors.green, bold = true },
     Colour3Bold = { fg = colors.yellow, bold = true },
