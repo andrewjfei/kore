@@ -96,7 +96,7 @@ Kore.palette = {
   blue_light = "#c2d1f0",
 
   pink_dark = "#e05299",
-  pink_normal = "#fa9ecc",
+  pink_normal = "#d194a8",
   pink_light = "#fccfe6",
 
   cyan_dark = "#2e9e95",
@@ -210,6 +210,7 @@ local function get_groups()
     Colour4Background2Bold = { fg = colors.background_alt, bg = colors.pink, bold = true },
     Colour6Background2Bold = { fg = colors.background_alt, bg = colors.cyan, bold = true },
     Colour7Background2Bold = { fg = colors.background_alt, bg = colors.red, bold = true },
+
     Error = { link = "Colour7" },
     Warning = { link = "Colour1" },
     Info = { link = "Colour6" },
