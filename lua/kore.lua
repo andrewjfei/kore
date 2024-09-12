@@ -268,7 +268,7 @@ local function get_groups()
     WarningMsg = { link = "KoreRedBold" },
     LineNr = { fg = colors.light_dark },
     SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.dark_normal },
-    Folded = { fg = colors.orange_normal., bg = colors.dark_normal },
+    Folded = { fg = colors.orange_normal, bg = colors.dark_normal },
     FoldColumn = { fg = colors.pink_normal, bg = colors.light_normal },
     Cursor = { reverse = config.inverse },
     vCursor = { link = "Cursor" },
