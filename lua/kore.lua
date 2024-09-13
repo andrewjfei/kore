@@ -352,10 +352,10 @@ local function get_groups()
     -- GitSignsDelete = { link = "KoreRed" },
     
     -- json
-    jsonKeyword = { link = "Colour1" },
-    jsonQuote = { link = "KoreGreen" },
-    jsonBraces = { link = "Foreground1" },
-    jsonString = { link = "Colour3" },
+    -- jsonKeyword = { link = "Colour1" },
+    -- jsonQuote = { link = "KoreGreen" },
+    -- jsonBraces = { link = "Foreground1" },
+    -- jsonString = { link = "Colour3" },
 
     -- javascript
     -- javaScriptBraces = { link = "KoreForeground" },
@@ -504,8 +504,8 @@ local function get_groups()
     -- ["@punctuation"] = { link = "Delimiter" },
     -- ["@macro"] = { link = "Macro" },
     -- ["@structure"] = { link = "Structure" },
-    -- ["@lsp.type.class"] = { link = "@type" },
-    -- ["@lsp.type.comment"] = { link = "@comment" },
+    ["@lsp.type.class"] = { link = "@type" },
+    ["@lsp.type.comment"] = { link = "@comment" },
     -- ["@lsp.type.decorator"] = { link = "@macro" },
     -- ["@lsp.type.enum"] = { link = "@type" },
     -- ["@lsp.type.enumMember"] = { link = "@constant" },
@@ -515,11 +515,11 @@ local function get_groups()
     -- ["@lsp.type.method"] = { link = "@method" },
     -- ["@lsp.type.namespace"] = { link = "@namespace" },
     -- ["@lsp.type.parameter"] = { link = "@parameter" },
-    -- ["@lsp.type.property"] = { link = "@property" },
+    ["@lsp.type.property"] = { link = "@property" },
     -- ["@lsp.type.struct"] = { link = "@type" },
     -- ["@lsp.type.type"] = { link = "@type" },
     -- ["@lsp.type.typeParameter"] = { link = "@type.definition" },
-    -- ["@lsp.type.variable"] = { link = "@variable" },
+    ["@lsp.type.variable"] = { link = "@variable" },
 
     -- telescope
     TelescopeNormal = { link = "Background1" },
