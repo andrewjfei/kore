@@ -352,10 +352,10 @@ local function get_groups()
     -- GitSignsDelete = { link = "KoreRed" },
     
     -- json
-    -- jsonKeyword = { link = "KoreGreen" },
-    -- jsonQuote = { link = "KoreGreen" },
-    -- jsonBraces = { link = "KoreForeground" },
-    -- jsonString = { link = "KoreForeground" },
+    jsonKeyword = { link = "Colour1" },
+    jsonQuote = { link = "KoreGreen" },
+    jsonBraces = { link = "Foreground1" },
+    jsonString = { link = "Colour3" },
 
     -- javascript
     -- javaScriptBraces = { link = "KoreForeground" },
