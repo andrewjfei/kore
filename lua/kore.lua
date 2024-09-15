@@ -367,7 +367,7 @@ local function get_groups()
     -- javascript
     javaScriptBraces = { link = "Foreground1" },
     javaScriptFunction = { link = "Colour4" },
-    javaScriptIdentifier = { link = "Foreground1" },
+    javaScriptIdentifier = { link = "Colour6" },
     javaScriptMember = { link = "Colour7" },
     javaScriptNumber = { link = "Colour4" },
     javaScriptNull = { link = "Colour4" },
