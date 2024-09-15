@@ -226,7 +226,7 @@ local function get_groups()
     HintUndercurl = { undercurl = true, sp = colors.yellow },
 
     -- vim
-    Normal = { link = "Background1Foreground1" }, -- basic foreground and background 
+    Normal = { link = "Foreground1" }, -- basic foreground and background 
     NormalFloat = { link = "Background2Foreground1" }, -- floating windows
     NormalNC = { link = "Normal" }, -- non-current windows
     CursorLine = { link = "Background2" }, -- line colour when :set cursorline is enabled
