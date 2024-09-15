@@ -232,7 +232,7 @@ local function get_groups()
     CursorLine = { link = "Background2" }, -- line colour when :set cursorline is enabled
     CursorColumn = { link = "Colour5" }, -- column colour when :set cursorcolumn is enabled
     -- TabLineFill = { fg = colors.light_dark, bg = colors.dark_normal, reverse = config.invert_tabline },
-    -- TabLineSel = { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_tabline },
+    TabLineSel = { fg = colors.green, bg = colors.pink, reverse = config.invert_tabline },
     -- TabLine = { link = "TabLineFill" },
     MatchParen = { link = "Colour1Background2Bold" },
     -- ColorColumn = { bg = colors.dark_normal },
@@ -240,7 +240,7 @@ local function get_groups()
     -- CursorLineNr = { fg = colors.yellow_normal, bg = colors.dark_normal },
     NonText = { link = "Comment" },
     SpecialKey = { link = "Colour1" },
-    Visual = { link = "Background2" },
+    Visual = { link = "Background3" },
     -- VisualNOS = { link = "Visual" },
     Search = { link = "Colour3Background2Bold" },
     IncSearch = { link = "Colour1Background2Bold" },
