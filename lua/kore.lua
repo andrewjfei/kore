@@ -229,7 +229,7 @@ local function get_groups()
     Normal = { link = "Background1Foreground1" }, -- basic foreground and background 
     NormalFloat = { link = "Background2Foreground1" }, -- floating windows
     NormalNC = { link = "Normal" }, -- non-current windows
-    CursorLine = { link = "Background2Foreground1" }, -- line colour when :set cursorline is enabled
+    CursorLine = { link = "Background2" }, -- line colour when :set cursorline is enabled
     CursorColumn = { link = "Colour5" }, -- column colour when :set cursorcolumn is enabled
     -- TabLineFill = { fg = colors.light_dark, bg = colors.dark_normal, reverse = config.invert_tabline },
     -- TabLineSel = { fg = colors.green_normal, bg = colors.dark_normal, reverse = config.invert_tabline },
