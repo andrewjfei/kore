@@ -366,12 +366,12 @@ local function get_groups()
 
     -- javascript
     javaScriptBraces = { link = "Foreground1" },
-    -- javaScriptFunction = { link = "Colour4" },
-    -- javaScriptIdentifier = { link = "Colour6" },
-    -- javaScriptMember = { link = "Colour7" },
-    -- javaScriptNumber = { link = "Colour7" },
-    -- javaScriptNull = { link = "Colour7" },
-    -- javaScriptParens = { link = "KoreGreen" },
+    javaScriptFunction = { link = "Colour4" },
+    javaScriptIdentifier = { link = "Foreground1" },
+    javaScriptMember = { link = "Colour7" },
+    javaScriptNumber = { link = "Colour4" },
+    javaScriptNull = { link = "Colour4" },
+    javaScriptParens = { link = "Foreground1" },
 
     -- typescript
     -- typescriptReserved = { link = "KoreCyan" },
