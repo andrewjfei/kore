@@ -365,7 +365,7 @@ local function get_groups()
     -- jsonString = { link = "Colour3" },
 
     -- javascript
-    -- javaScriptBraces = { link = "KoreForeground" },
+    javaScriptBraces = { link = "Foreground1" },
     -- javaScriptFunction = { link = "Colour4" },
     -- javaScriptIdentifier = { link = "Colour6" },
     -- javaScriptMember = { link = "Colour7" },
