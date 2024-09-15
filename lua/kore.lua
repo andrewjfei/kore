@@ -247,7 +247,7 @@ local function get_groups()
     CurSearch = { link = "IncSearch" },
     -- QuickFixLine = { link = "KorePink" },
     -- Underlined = { fg = colors.blue_normal, underline = config.underline },
-    -- StatusLine = { fg = colors.dark_light, bg = colors.foreground, reverse = config.inverse },
+    StatusLine = { link = "Foreground1" }, -- status line showing visual line, command, etc.
     -- StatusLineNC = { fg = colors.dark_normal, bg = colors.fg4, reverse = config.inverse },
     -- WinBar = { fg = colors.fg4, bg = colors.background },
     -- WinBarNC = { fg = colors.foreground, bg = colors.dark_normal },
@@ -261,13 +261,13 @@ local function get_groups()
     Question = { link = "Hint" },
     WarningMsg = { link = "Warning" },
     LineNr = { link = "Foreground3" },
-    -- SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.dark_normal },
+    SignColumn = { link = "Background1" }, -- sign column
     Folded = { link = "Background2Colour1" },
     -- FoldColumn = { fg = colors.yellow_normal, bg = colors.dark_normal },
-    -- Cursor = { reverse = config.inverse },
-    -- vCursor = { link = "Cursor" },
-    -- iCursor = { link = "Cursor" },
-    -- lCursor = { link = "Cursor" },
+    Cursor = { reverse = config.inverse }, -- cursor colour
+    vCursor = { link = "Cursor" },
+    iCursor = { link = "Cursor" },
+    lCursor = { link = "Cursor" },
     Special = { link = "Colour1" },
     Comment = { link = "Foreground3" },
     -- Todo = { fg = colors.yellow_normal, bold = true }, -- todo text in comments
