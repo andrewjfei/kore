@@ -226,7 +226,7 @@ local function get_groups()
     HintUndercurl = { undercurl = true, sp = colors.yellow },
 
     -- vim
-    Normal = { link = "Foreground1" }, -- basic foreground and background 
+    Normal = { link = "Background1Foreground1" }, -- basic foreground and background 
     NormalFloat = { link = "Background2Foreground1" }, -- floating windows
     NormalNC = { link = "Normal" }, -- non-current windows
     CursorLine = { link = "Background2" }, -- line colour when :set cursorline is enabled
@@ -248,8 +248,8 @@ local function get_groups()
     -- QuickFixLine = { link = "KorePink" },
     -- Underlined = { fg = colors.blue_normal, underline = config.underline },
     StatusLine = { link = "Foreground1" }, -- status line showing visual line, command, etc.
-    -- StatusLineNC = { fg = colors.dark_normal, bg = colors.fg4, reverse = config.inverse },
-    -- WinBar = { fg = colors.fg4, bg = colors.background },
+    StatusLineNC = { link = "Comment" },
+    WinBar = { fg = colors.fg4, bg = colors.pink },
     -- WinBarNC = { fg = colors.foreground, bg = colors.dark_normal },
     -- WinSeparator = { fg = colors.orange_normal, bg = nil },
     -- WildMenu = { fg = colors.blue_normal, bg = colors.dark_light, bold = config.bold },
@@ -270,7 +270,7 @@ local function get_groups()
     lCursor = { link = "Cursor" },
     Special = { link = "Colour1" },
     Comment = { link = "Foreground3" },
-    -- Todo = { fg = colors.yellow_normal, bold = true }, -- todo text in comments
+    Todo = { fg = colors.yellow, bold = true }, -- todo text in comments
     -- Done = { fg = colors.dark_normal, bg = colors.green_normal, bold = true },
     -- Error = { fg = colors.dark_normal, bg = colors.red_normal, bold = true },
     Statement = { link = "Colour1" },
@@ -280,7 +280,7 @@ local function get_groups()
     Exception = { link = "Colour1" },
     Operator = { link = "Foreground1" },
     Keyword = { link = "Colour1" },
-    Identifier = { link = "Normal" },
+    Identifier = { link = "Foreground1" },
     Function = { link = "Colour2" },
     -- PreProc = { link = "KorePink" },
     Include = { link = "Colour1" },
