@@ -524,7 +524,7 @@ local function get_groups()
     -- telescope
     TelescopeNormal = { link = "Background1" },
     TelescopeSelection = { link = "Background2Foreground1" },
-    TelescopeSelectionCaret = { link = "Foreground1" },
+    TelescopeSelectionCaret = { link = "Background2Colour1" },
     TelescopeMultiSelection = { link = "Foreground4" },
     TelescopeBorder = { link = "TelescopeNormal" },
     TelescopePromptBorder = { link = "TelescopeNormal" },
