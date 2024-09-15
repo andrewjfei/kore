@@ -237,7 +237,7 @@ local function get_groups()
     MatchParen = { link = "Colour1Background2Bold" },
     -- ColorColumn = { bg = colors.dark_normal },
     -- Conceal = { fg = colors.blue_normal },
-    -- CursorLineNr = { fg = colors.yellow_normal, bg = colors.dark_normal },
+    CursorLineNr = { link = "Colour1" },
     NonText = { link = "Comment" },
     SpecialKey = { link = "Colour1" },
     Visual = { link = "Background3" },
