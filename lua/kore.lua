@@ -345,9 +345,10 @@ local function get_groups()
     DiagnosticVirtualTextWarn = { link = "Warning" },
     DiagnosticVirtualTextInfo = { link = "Info" },
     DiagnosticVirtualTextHint = { link = "Hint" },
-    -- LspReferenceRead = { link = "KoreYellowBold" },
-    -- LspReferenceText = { link = "KoreYellowBold" },
-    -- LspReferenceWrite = { link = "KoreOrangeBold" },
+
+    LspReferenceRead = { link = "Colour6" },
+    LspReferenceText = { link = "Colour5" },
+    LspReferenceWrite = { link = "Colour7" },
     -- LspCodeLens = { link = "KoreGray" },
     -- LspSignatureActiveParameter = { link = "Search" },
     -- gitcommitSelectedFile = { link = "KoreGreen" },
