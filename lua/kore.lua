@@ -231,7 +231,7 @@ local function get_groups()
     NormalNC = { link = "Normal" }, -- non-current windows
     CursorLine = { link = "Background2" }, -- line colour when :set cursorline is enabled
     CursorColumn = { link = "Colour5" }, -- column colour when :set cursorcolumn is enabled
-    TabLineFill = { fg = colors.red, bg = colors.cyan },
+    TabLineFill = { link = "Foreground4" },
     TabLineSel = { link = "Colour1Background2Bold" },
     TabLine = { link = "TabLineFill" },
     MatchParen = { link = "Colour1Background2Bold" },
