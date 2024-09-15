@@ -523,15 +523,15 @@ local function get_groups()
 
     -- telescope
     TelescopeNormal = { link = "Background1" },
-    TelescopeSelection = { link = "Background2Colour1" },
-    TelescopeSelectionCaret = { link = "Background2Colour1" },
+    TelescopeSelection = { link = "Background2Foreground1" },
+    TelescopeSelectionCaret = { link = "Foreground1" },
     TelescopeMultiSelection = { link = "Foreground4" },
     TelescopeBorder = { link = "TelescopeNormal" },
     TelescopePromptBorder = { link = "TelescopeNormal" },
     TelescopeResultsBorder = { link = "TelescopeNormal" },
     TelescopePreviewBorder = { link = "TelescopeNormal" },
-    TelescopeMatching = { link = "Colour3" },
-    TelescopePromptPrefix = { link = "Colour1" },
+    TelescopeMatching = { link = "Colour1" },
+    TelescopePromptPrefix = { link = "TelescopeNormal" },
     TelescopePrompt = { link = "TelescopeNormal" },
 
     -- cmp
