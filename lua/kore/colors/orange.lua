@@ -81,7 +81,7 @@ local ret = {
 	hint = "",
 	success = "#b1bd75",
 
-	light_dark = "#747474",
+	comment_light = "#747474",
 	foreground_dark = "#b4b4b4",
 	foreground = "#e4e4e4",
 }

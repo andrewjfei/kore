@@ -25,14 +25,14 @@ function M.get(c, opts)
     WinSeparator                = { fg = c.border, bold = true }, -- the column separating vertically split windows
     Folded                      = { fg = c.blue, bg = c.fg_gutter }, -- line used for closed folds
     FoldColumn                  = { bg = c.bg, fg = c.comment }, -- 'foldcolumn'
-    SignColumn                  = { bg = c.bg, fg = c.fg_gutter }, -- column where |signs| are displayed
+    SignColumn                  = { fg = c.comment, bg = c.background }, -- column where |signs| are displayed
     SignColumnSB                = { bg = c.bg_sidebar, fg = c.fg_gutter }, -- column where |signs| are displayed
     Substitute                  = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
-    LineNr                      = { fg = c.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr                = { fg = c.orange, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    LineNrAbove                 = { fg = c.fg_gutter },
-    LineNrBelow                 = { fg = c.fg_gutter },
-    MatchParen                  = { fg = c.orange, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    LineNr                      = { fg = c.comment_light }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    CursorLineNr                = { fg = c.primary }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    LineNrAbove                 = "LineNr",
+    LineNrBelow                 = "LineNr",
+    MatchParen                  = { fg = c.background, bg = c.primary, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg                     = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea                     = { fg = c.fg_dark }, -- Area for messages and cmdline
     MoreMsg                     = { fg = c.blue }, -- |more-prompt|
@@ -71,9 +71,9 @@ function M.get(c, opts)
     WinBar                      = "StatusLine" , -- window bar
     WinBarNC                    = "StatusLineNC", -- window bar in inactive windows
 
-    Bold                        = { bold = true, fg = c.fg }, -- (preferred) any bold text
+    Bold                        = { bold = true, fg = c.foreground }, -- (preferred) any bold text
     Character                   = { fg = c.tertiary }, --  a character constant: 'c', '\n'
-    Constant                    = { fg = c.orange }, -- (preferred) any constant
+    Constant                    = { fg = c.foreground }, -- (preferred) any constant
     Debug                       = { fg = c.orange }, --    debugging statements
     Delimiter                   =  "Special", --  character that needs attention
     Error                       = { fg = c.error }, -- (preferred) any erroneous construct
@@ -83,11 +83,11 @@ function M.get(c, opts)
     Keyword                     = { fg = c.primary }, --  any other keyword
     Operator                    = { fg = c.primary }, -- "sizeof", "+", "*", etc.
     PreProc                     = { fg = c.cyan }, -- (preferred) generic Preprocessor
-    Special                     = { fg = c.blue1 }, -- (preferred) any special symbol
+    Special                     = { fg = c.primary }, -- (preferred) any special symbol
     Statement                   = { fg = c.magenta }, -- (preferred) any statement
     String                      = { fg = c.tertiary }, --   a string constant: "this is a string"
     Todo                        = { bg = c.yellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-    Type                        = { fg = c.blue1 }, -- (preferred) int, long, char, etc.
+    Type                        = { fg = c.quaternary }, -- (preferred) int, long, char, etc.
     Underlined                  = { underline = true }, -- (preferred) text that stands out, HTML links
     debugBreakpoint             = { bg = c.info, fg = c.info }, -- used for breakpoint colors in terminal-debug
     debugPC                     = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
