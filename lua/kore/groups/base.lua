@@ -1,5 +1,3 @@
-local Util = require("kore.util")
-
 local M = {}
 
 ---@type kore.HighlightsFn
@@ -15,13 +13,13 @@ function M.get(c, opts)
     lCursor                     = { fg = c.bg, bg = c.fg }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM                    = { fg = c.bg, bg = c.fg }, -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn                = { bg = c.bg_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine                  = { bg = c.bg_highlight }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLine                  = { bg = c.background_light }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory                   = { fg = c.blue }, -- directory names (and other special names in listings)
     DiffAdd                     = { bg = c.diff.add }, -- diff mode: Added line |diff.txt|
     DiffChange                  = { bg = c.diff.change }, -- diff mode: Changed line |diff.txt|
     DiffDelete                  = { bg = c.diff.delete }, -- diff mode: Deleted line |diff.txt|
     DiffText                    = { bg = c.diff.text }, -- diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer                 = { fg = c.bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    EndOfBuffer                 = { fg = c.background_light }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     ErrorMsg                    = { fg = c.error }, -- error messages on the command line
     VertSplit                   = { fg = c.border }, -- the column separating vertically split windows
     WinSeparator                = { fg = c.border, bold = true }, -- the column separating vertically split windows
@@ -39,15 +37,15 @@ function M.get(c, opts)
     MsgArea                     = { fg = c.fg_dark }, -- Area for messages and cmdline
     MoreMsg                     = { fg = c.blue }, -- |more-prompt|
     NonText                     = { fg = c.dark3 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal                      = { fg = c.fg, bg = c.bg }, -- normal text
-    NormalNC                    = { fg = c.fg, bg = c.bg_dark }, -- normal text in non-current windows
+    Normal                      = { fg = c.foreground, bg = c.background }, -- normal text
+    NormalNC                    = { fg = c.foreground, bg = c.background }, -- normal text in non-current windows
     NormalSB                    = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
-    NormalFloat                 = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
+    NormalFloat                 = { fg = c.foreground, bg = c.background_light }, -- Normal text in floating windows.
     FloatBorder                 = { fg = c.border_highlight, bg = c.bg_float },
     FloatTitle                  = { fg = c.border_highlight, bg = c.bg_float },
-    Pmenu                       = { bg = c.bg_popup, fg = c.fg }, -- Popup menu: normal item.
-    PmenuSel                    = { bg = c.fg_gutter }, -- Popup menu: selected item.
-    PmenuSbar                   = { bg = c.bg_popup }, -- Popup menu: scrollbar.
+    Pmenu                       = { fg = c.foreground, bg = c.background_light }, -- Popup menu: normal item.
+    PmenuSel                    = { bg = c.primary }, -- Popup menu: selected item.
+    PmenuSbar                   = { bg = c.comment }, -- Popup menu: scrollbar.
     PmenuThumb                  = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
     Question                    = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine                = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
@@ -74,20 +72,20 @@ function M.get(c, opts)
     WinBarNC                    = "StatusLineNC", -- window bar in inactive windows
 
     Bold                        = { bold = true, fg = c.fg }, -- (preferred) any bold text
-    Character                   = { fg = c.green }, --  a character constant: 'c', '\n'
+    Character                   = { fg = c.tertiary }, --  a character constant: 'c', '\n'
     Constant                    = { fg = c.orange }, -- (preferred) any constant
     Debug                       = { fg = c.orange }, --    debugging statements
     Delimiter                   =  "Special", --  character that needs attention
     Error                       = { fg = c.error }, -- (preferred) any erroneous construct
-    Function                    = { fg = c.blue }, -- function name (also: methods for classes)
-    Identifier                  = { fg = c.magenta }, -- (preferred) any variable name
+    Function                    = { fg = c.secondary }, -- function name (also: methods for classes)
+    Identifier                  = { fg = c.foreground }, -- (preferred) any variable name
     Italic                      = { italic = true, fg = c.fg }, -- (preferred) any italic text
-    Keyword                     = { fg = c.cyan }, --  any other keyword
-    Operator                    = { fg = c.blue5 }, -- "sizeof", "+", "*", etc.
+    Keyword                     = { fg = c.primary }, --  any other keyword
+    Operator                    = { fg = c.primary }, -- "sizeof", "+", "*", etc.
     PreProc                     = { fg = c.cyan }, -- (preferred) generic Preprocessor
     Special                     = { fg = c.blue1 }, -- (preferred) any special symbol
     Statement                   = { fg = c.magenta }, -- (preferred) any statement
-    String                      = { fg = c.green }, --   a string constant: "this is a string"
+    String                      = { fg = c.tertiary }, --   a string constant: "this is a string"
     Todo                        = { bg = c.yellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     Type                        = { fg = c.blue1 }, -- (preferred) int, long, char, etc.
     Underlined                  = { underline = true }, -- (preferred) text that stands out, HTML links
@@ -127,7 +125,7 @@ function M.get(c, opts)
 
     -- Health
     healthError                 = { fg = c.error },
-    healthSuccess               = { fg = c.green1 },
+    healthSuccess               = { fg = c.success },
     healthWarning               = { fg = c.warning },
 
     -- diff (not needed anymore?)
