@@ -6,7 +6,7 @@ function M.get(c, opts)
   return {
     Foo                         = { bg = c.magenta2, fg = c.fg },
 
-    Comment                     = { fg = c.comment }, -- any comment
+    Comment                     = { fg = c.comment_light }, -- any comment
     ColorColumn                 = { bg = c.black }, -- used for the columns set with 'colorcolumn'
     Conceal                     = { fg = c.dark5 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor                      = { fg = c.bg, bg = c.fg }, -- character under the cursor
@@ -63,8 +63,8 @@ function M.get(c, opts)
     TabLineFill                 = { bg = c.black }, -- tab pages line, where there are no labels
     TabLineSel                  = { fg = c.black, bg = c.blue }, -- tab pages line, active tab page label
     Title                       = { fg = c.blue, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
-    Visual                      = { bg = c.bg_visual }, -- Visual mode selection
-    VisualNOS                   = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
+    Visual                      = { fg = c.background, bg = c.tertiary }, -- Visual mode selection
+    VisualNOS                   = { bg = c.comment }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg                  = { fg = c.warning }, -- warning messages
     Whitespace                  = { fg = c.fg_gutter }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu                    = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
