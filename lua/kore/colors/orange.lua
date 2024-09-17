@@ -38,7 +38,7 @@ local ret = {
 	-- kore colours
 	background = "#1d1d1d",
 	background_light = "#2d2d2d",
-	comment = "#444444",
+	buffer = "#444444",
 
 	-- orange
 	primary_dark = "#ee7c2b",
@@ -78,10 +78,10 @@ local ret = {
 	error = "#ff7f66",
 	warning = "#ffa666",
 	info = "#e8cd7d",
-	hint = "",
+	hint = "#df9fb5",
 	success = "#b1bd75",
 
-	comment_light = "#747474",
+	comment = "#747474",
 	foreground_dark = "#b4b4b4",
 	foreground = "#e4e4e4",
 }

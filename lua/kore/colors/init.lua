@@ -31,33 +31,6 @@ function M.setup(opts)
         text = colors.blue7,
     }
 
-    colors.git.ignore = colors.dark3
-    colors.black = colors.bg
-    colors.border_highlight = colors.blue1
-    colors.border = colors.black
-
-    -- Popups and statusline always get a dark background
-    colors.bg_popup = colors.bg_dark
-    colors.bg_statusline = colors.bg_dark
-
-    -- Sidebar and Floats are configurable
-    colors.bg_sidebar = colors.bg_dark
-    colors.bg_float = colors.bg_dark
-
-    colors.bg_visual = colors.blue0
-    colors.bg_search = colors.blue0
-    colors.fg_sidebar = colors.fg_dark
-    colors.fg_float = colors.fg
-
-    colors.error = colors.red1
-    colors.todo = colors.blue
-    colors.warning = colors.yellow
-    colors.info = colors.blue2
-    colors.hint = colors.teal
-
-    colors.rainbow = { colors.blue, colors.yellow, colors.green, colors.teal, colors.magenta, colors.purple }
-
-    -- override colours if configured in options
     opts.on_colors(colors)
 
     return colors, opts

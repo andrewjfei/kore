@@ -29,12 +29,12 @@ end
 ---@param colors ColorScheme
 function M.terminal(colors)
     -- dark
-    vim.g.terminal_color_0 = colors.black
-    vim.g.terminal_color_8 = colors.terminal_black
+    vim.g.terminal_color_0 = colors.background
+    vim.g.terminal_color_8 = colors.background_light
 
     -- light
-    vim.g.terminal_color_7 = colors.fg_dark
-    vim.g.terminal_color_15 = colors.fg
+    vim.g.terminal_color_7 = colors.foreground_dark
+    vim.g.terminal_color_15 = colors.foreground
 
     -- colors
     vim.g.terminal_color_1 = colors.red

@@ -2,143 +2,146 @@ local M = {}
 
 ---@type kore.HighlightsFn
 function M.get(c, opts)
-  -- stylua: ignore
-  return {
-    Foo                         = { bg = c.magenta2, fg = c.fg },
+    -- stylua: ignore
+    return {
+        Comment                     = { fg = c.comment },                                        -- comment
+        ColorColumn                 = { bg = c.primary },                                        -- column colour used for ruler, etc.
+        Conceal                     = "EndOfBuffer",                                             -- placeholder characters substituted for concealed text (i.e. markdown)
+        Cursor                      = { fg = c.background, bg = c.foreground, bold = true },     -- character under cursor
+        lCursor                     = "Cursor",                                                  -- character under cursor
+        CursorIM                    = "Cursor",                                                  -- character under cursor
+        CursorColumn                = "CursorLine",                                              -- column of cursor
+        CursorLine                  = "CursorLine",                                              -- row/line of cursor
+        Directory                   = { fg = c.secondary },                                      -- directory colour
+        DiffAdd                     = { fg = c.background_light, bg = c.success, bold = true },  -- diff added line
+        DiffChange                  = { fg = c.background_light, bg = c.info, bold = true },     -- diff changed line
+        DiffDelete                  = { fg = c.background_light, bg = c.error, bold = true },    -- diff deleted line
+        DiffText                    = { fg = c.background_light, bg = c.comment, bold = true },  -- diff text changed in line
+        EndOfBuffer                 = { fg = c.buffer },                                         -- filler lines (i.e. ~) in line number column
+        ErrorMsg                    = "DiagnosticError",                                         -- error messages in the command line
+        VertSplit                   = "SpecialKey",                                              -- line separating split windows
+        WinSeparator                = "SpecialKey",                                              -- line separating split windows
+        Folded                      = { fg = c.primary, bg = c.background_light, bold = true },  -- closed folds
+        FoldColumn                  = { bg = c.red, fg = c.comment },                            -- unsure
+        SignColumn                  = "Comment",                                                 -- sign column beside line number column
+        SignColumnSB                = "Comment",                                                 -- sign column beside line number column
+        Substitute                  = { fg = c.background_light, bg = c.primary, bold = true },  -- string which will be substituted/replaced
+        LineNr                      = "Comment",                                                 -- line number column
+        CursorLineNr                = "SpecialKey",                                              -- cursor line number column
+        LineNrAbove                 = "LineNr",                                                  -- line numbers above cursor line
+        LineNrBelow                 = "LineNr",                                                  -- line numbers below cursor line
+        MatchParen                  = { fg = c.background, bg = c.primary, bold = true },        -- matching parenthesis of parenthesis under cursor
+        ModeMsg                     = { fg = c.foreground },                                     -- mode messages (i.e. "-- INSERT --")
+        MsgArea                     = "ModeMsg",                                                 -- messages and command line
+        MoreMsg                     = "ModeMsg",                                                 -- more message prompt
+        NonText                     = "Comment",                                                 -- text (i.e. "@@@")
+        Normal                      = { fg = c.foreground, bg = c.background },                  -- normal text
+        NormalNC                    = "Normal",                                                  -- normal text in non-current window
+        NormalSB                    = { fg = c.green, bg = c.magenta },                          -- normal text in sidebar
+        NormalFloat                 = { fg = c.foreground, bg = c.background_light },            -- normal text in floating window
+        FloatBorder                 = { fg = c.magenta, bg = c.cyan },                           -- floating window border
+        FloatTitle                  = { fg = c.cyan, bg = c.red },                               -- floating window title
+        Pmenu                       = "NormalFloat",                                             -- popup menu item
+        PmenuSel                    = "Substitute",                                              -- popup menu selected item
+        PmenuSbar                   = { bg = c.background_light },                               -- popup menu scrollbar
+        PmenuThumb                  = "VisualNOS",                                               -- popup menu scrollbar thumb
+        Question                    = "ModeMsg",                                                 -- question prompts in command line
+        QuickFixLine                = { bg = c.cyan, bold = true },                              -- unsure
+        Search                      = { fg = c.background_light, bg = c.tertiary, bold = true }, -- unselected searched string
+        IncSearch                   = "Substitute",                                              -- included search string
+        CurSearch                   = "IncSearch",                                               -- selected search string
+        SpecialKey                  = { fg = c.primary },                                        -- unprintable characters
+        SpellBad                    = { sp = c.error, undercurl = true },                        -- unrecognised word
+        SpellCap                    = { sp = c.warning, undercurl = true },                      -- incorrect word capitalisation 
+        SpellLocal                  = { sp = c.info, undercurl = true },                         -- word recognised as used by another region
+        SpellRare                   = { sp = c.hint, undercurl = true },                         -- word that is rarely used
+        StatusLine                  = { fg = c.background_light, bg = c.primary, bold = true },  -- status line of current window
+        StatusLineNC                = { fg = c.background_light, bg = c.comment, bold = true },  -- status line of not-current window
+        TabLine                     = { fg = c.comment, bg = c.background },                     -- inactive tab label
+        TabLineFill                 = { bg = c.background },                                     -- tab area background (i.e. where there are no tabs)
+        TabLineSel                  = { fg = c.background_light, bg = c.primary, bold = true },  -- active tab label
+        Title                       = { fg = c.primary, bold = true },                           -- output titles
+        Visual                      = { bg = c.buffer },                                         -- visual mode selection
+        VisualNOS                   = { bg = c.comment },                                        -- unowned visual mode selection
+        WarningMsg                  = { fg = c.warning },                                        -- warning message
+        Whitespace                  = { fg = c.background_light },                               -- whitespace characters
+        WildMenu                    = { bg = c.magenta },                                        -- wild menu match
+        WinBar                      = "StatusLine",                                              -- window bar
+        WinBarNC                    = "StatusLineNC",                                            -- window bar in non-current window
 
-    Comment                     = { fg = c.comment_light }, -- any comment
-    ColorColumn                 = { bg = c.black }, -- used for the columns set with 'colorcolumn'
-    Conceal                     = { fg = c.dark5 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-    Cursor                      = { fg = c.bg, bg = c.fg }, -- character under the cursor
-    lCursor                     = { fg = c.bg, bg = c.fg }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-    CursorIM                    = { fg = c.bg, bg = c.fg }, -- like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn                = { bg = c.bg_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine                  = { bg = c.background_light }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    Directory                   = { fg = c.blue }, -- directory names (and other special names in listings)
-    DiffAdd                     = { bg = c.diff.add }, -- diff mode: Added line |diff.txt|
-    DiffChange                  = { bg = c.diff.change }, -- diff mode: Changed line |diff.txt|
-    DiffDelete                  = { bg = c.diff.delete }, -- diff mode: Deleted line |diff.txt|
-    DiffText                    = { bg = c.diff.text }, -- diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer                 = { fg = c.background_light }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-    ErrorMsg                    = { fg = c.error }, -- error messages on the command line
-    VertSplit                   = { fg = c.border }, -- the column separating vertically split windows
-    WinSeparator                = { fg = c.border, bold = true }, -- the column separating vertically split windows
-    Folded                      = { fg = c.blue, bg = c.fg_gutter }, -- line used for closed folds
-    FoldColumn                  = { bg = c.bg, fg = c.comment }, -- 'foldcolumn'
-    SignColumn                  = { fg = c.comment, bg = c.background }, -- column where |signs| are displayed
-    SignColumnSB                = { bg = c.bg_sidebar, fg = c.fg_gutter }, -- column where |signs| are displayed
-    Substitute                  = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
-    LineNr                      = { fg = c.comment_light }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr                = { fg = c.primary }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    LineNrAbove                 = "LineNr",
-    LineNrBelow                 = "LineNr",
-    MatchParen                  = { fg = c.background, bg = c.primary, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    ModeMsg                     = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea                     = { fg = c.fg_dark }, -- Area for messages and cmdline
-    MoreMsg                     = { fg = c.blue }, -- |more-prompt|
-    NonText                     = { fg = c.dark3 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal                      = { fg = c.foreground, bg = c.background }, -- normal text
-    NormalNC                    = { fg = c.foreground, bg = c.background }, -- normal text in non-current windows
-    NormalSB                    = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
-    NormalFloat                 = { fg = c.foreground, bg = c.background_light }, -- Normal text in floating windows.
-    FloatBorder                 = { fg = c.border_highlight, bg = c.bg_float },
-    FloatTitle                  = { fg = c.border_highlight, bg = c.bg_float },
-    Pmenu                       = { fg = c.foreground, bg = c.background_light }, -- Popup menu: normal item.
-    PmenuSel                    = { bg = c.primary }, -- Popup menu: selected item.
-    PmenuSbar                   = { bg = c.comment }, -- Popup menu: scrollbar.
-    PmenuThumb                  = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
-    Question                    = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
-    QuickFixLine                = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search                      = { bg = c.bg_search, fg = c.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-    IncSearch                   = { bg = c.orange, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    CurSearch                   =  "IncSearch",
-    SpecialKey                  = { fg = c.dark3 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-    SpellBad                    = { sp = c.error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-    SpellCap                    = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-    SpellLocal                  = { sp = c.info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-    SpellRare                   = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    StatusLine                  = { fg = c.fg_sidebar, bg = c.bg_statusline }, -- status line of current window
-    StatusLineNC                = { fg = c.fg_gutter, bg = c.bg_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    TabLine                     = { bg = c.bg_statusline, fg = c.fg_gutter }, -- tab pages line, not active tab page label
-    TabLineFill                 = { bg = c.black }, -- tab pages line, where there are no labels
-    TabLineSel                  = { fg = c.black, bg = c.blue }, -- tab pages line, active tab page label
-    Title                       = { fg = c.blue, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
-    Visual                      = { bg = c.background_light }, -- Visual mode selection
-    VisualNOS                   = { bg = c.comment }, -- Visual mode selection when vim is "Not Owning the Selection".
-    WarningMsg                  = { fg = c.warning }, -- warning messages
-    Whitespace                  = { fg = c.fg_gutter }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    WildMenu                    = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
-    WinBar                      = "StatusLine" , -- window bar
-    WinBarNC                    = "StatusLineNC", -- window bar in inactive windows
+        Bold                        = { fg = c.foreground, bold = true },                        -- bold text
+        Character                   = "String",                                                  -- character (i.e. 'c', etc.)
+        Constant                    = "ModeMsg",                                                 -- constant
+        Debug                       = { fg = c.red },                                            -- debugging statements
+        Delimiter                   = "SpecialKey",                                              -- character that needs attention
+        Error                       = "DiagnosticError",                                         -- error
+        Function                    = "Directory",                                               -- function and methods
+        Identifier                  = "ModeMsg",                                                 -- variable
+        Italic                      = { italic = true, fg = c.fg },                              -- italic text
+        Keyword                     = "SpecialKey",                                              -- keywords
+        Operator                    = "SpecialKey",                                              -- operators (i.e. "+", "*", etc.)
+        PreProc                     = { fg = c.cyan },                                           -- preprocessors
+        Special                     = "SpecialKey",                                              -- special symbols
+        Statement                   = "SpecialKey",                                              -- statements
+        String                      = { fg = c.tertiary },                                       -- string
+        Todo                        = { bg = c.red, fg = c.bg },                                 -- to-do comments (i.e. TODO, FIXME, etc.)
+        Type                        = { fg = c.quaternary },                                     -- data types (i.e. int, long, float, etc.)
+        Underlined                  = { underline = true },                                      -- underlinedd text (i.e. HTML links, etc.)
+        debugBreakpoint             = { fg = c.red, bg = c.red, },                               -- debug breakpoint
+        debugPC                     = { bg = c.cyan },                                           -- highlight current line in debug terminal
+        dosIniLabel                 = "@property",
+        helpCommand                 = { bg = c.terminal_black, fg = c.blue },
+        htmlH1                      = { fg = c.magenta, bold = true },
+        htmlH2                      = { fg = c.blue, bold = true },
+        qfFileName                  = { fg = c.blue },
+        qfLineNr                    = { fg = c.dark5 },
 
-    Bold                        = { bold = true, fg = c.foreground }, -- (preferred) any bold text
-    Character                   = { fg = c.tertiary }, --  a character constant: 'c', '\n'
-    Constant                    = { fg = c.foreground }, -- (preferred) any constant
-    Debug                       = { fg = c.orange }, --    debugging statements
-    Delimiter                   =  "Special", --  character that needs attention
-    Error                       = { fg = c.error }, -- (preferred) any erroneous construct
-    Function                    = { fg = c.secondary }, -- function name (also: methods for classes)
-    Identifier                  = { fg = c.foreground }, -- (preferred) any variable name
-    Italic                      = { italic = true, fg = c.fg }, -- (preferred) any italic text
-    Keyword                     = { fg = c.primary }, --  any other keyword
-    Operator                    = { fg = c.primary }, -- "sizeof", "+", "*", etc.
-    PreProc                     = { fg = c.cyan }, -- (preferred) generic Preprocessor
-    Special                     = { fg = c.primary }, -- (preferred) any special symbol
-    Statement                   = { fg = c.magenta }, -- (preferred) any statement
-    String                      = { fg = c.tertiary }, --   a string constant: "this is a string"
-    Todo                        = { bg = c.yellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-    Type                        = { fg = c.quaternary }, -- (preferred) int, long, char, etc.
-    Underlined                  = { underline = true }, -- (preferred) text that stands out, HTML links
-    debugBreakpoint             = { bg = c.info, fg = c.info }, -- used for breakpoint colors in terminal-debug
-    debugPC                     = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
-    dosIniLabel                 = "@property",
-    helpCommand                 = { bg = c.terminal_black, fg = c.blue },
-    htmlH1                      = { fg = c.magenta, bold = true },
-    htmlH2                      = { fg = c.blue, bold = true },
-    qfFileName                  = { fg = c.blue },
-    qfLineNr                    = { fg = c.dark5 },
+        -- These groups are for the native LSP client. Some other LSP clients may
+        -- use these groups, or use their own.
+        LspReferenceText            = "Visual", -- used for highlighting "text" references
+        LspReferenceRead            = "Visual", -- used for highlighting "read" references
+        LspReferenceWrite           = "Visual", -- used for highlighting "write" references
+        LspSignatureActiveParameter = { bg = c.red, bold = true },
+        LspCodeLens                 = "Comment",
+        LspInlayHint                = { bg = c.blue7, fg = c.dark3 },
+        LspInfoBorder               = { fg = c.yellow, bg = c.red },
 
-    -- These groups are for the native LSP client. Some other LSP clients may
-    -- use these groups, or use their own.
-    LspReferenceText            = { bg = c.fg_gutter }, -- used for highlighting "text" references
-    LspReferenceRead            = { bg = c.fg_gutter }, -- used for highlighting "read" references
-    LspReferenceWrite           = { bg = c.fg_gutter }, -- used for highlighting "write" references
-    LspSignatureActiveParameter = { bg = c.bg_visual, bold = true },
-    LspCodeLens                 = { fg = c.comment },
-    LspInlayHint                = { bg = c.blue7, fg = c.dark3 },
-    LspInfoBorder               = { fg = c.border_highlight, bg = c.bg_float },
+        Added                       = { fg = c.success },
+        Removed                     = { fg = c.error },
+        Changed                     = { fg = c.info },
 
-    -- diagnostics
-    DiagnosticError             = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticWarn              = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticInfo              = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticHint              = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticUnnecessary       = { fg = c.terminal_black }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticVirtualTextError  = { bg = c.error, fg = c.error }, -- Used for "Error" diagnostic virtual text
-    DiagnosticVirtualTextWarn   = { bg = c.warning, fg = c.warning }, -- Used for "Warning" diagnostic virtual text
-    DiagnosticVirtualTextInfo   = { bg = c.info, fg = c.info }, -- Used for "Information" diagnostic virtual text
-    DiagnosticVirtualTextHint   = { bg = c.hint, fg = c.hint }, -- Used for "Hint" diagnostic virtual text
-    DiagnosticUnderlineError    = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics
-    DiagnosticUnderlineWarn     = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
-    DiagnosticUnderlineInfo     = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
-    DiagnosticUnderlineHint     = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
+        -- diagnostics
+        DiagnosticOk                = { fg = c.success },                   -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticError             = { fg = c.error },                     -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticWarn              = { fg = c.warning },                   -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticInfo              = { fg = c.info },                      -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticHint              = { fg = c.hint },                      -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticUnnecessary       = { fg = c.comment },                   -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticVirtualTextError  = "DiagnosticError",                    -- Used for "Error" diagnostic virtual text
+        DiagnosticVirtualTextWarn   = "DiagnosticWarn",                     -- Used for "Warning" diagnostic virtual text
+        DiagnosticVirtualTextInfo   = "DiagnosticInfo",                     -- Used for "Information" diagnostic virtual text
+        DiagnosticVirtualTextHint   = "DiagnosticHint",
+        DiagnosticUnderlineError    = { undercurl = true, sp = c.error },   -- Used to underline "Error" diagnostics
+        DiagnosticUnderlineWarn     = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
+        DiagnosticUnderlineInfo     = { undercurl = true, sp = c.info },    -- Used to underline "Information" diagnostics
+        DiagnosticUnderlineHint     = { undercurl = true, sp = c.hint },    -- Used to underline "Hint" diagnostics
 
-    -- Health
-    healthError                 = { fg = c.error },
-    healthSuccess               = { fg = c.success },
-    healthWarning               = { fg = c.warning },
+        -- Health
+        healthError                 = { fg = c.error },
+        healthSuccess               = { fg = c.success },
+        healthWarning               = { fg = c.warning },
 
-    -- diff (not needed anymore?)
-    diffAdded                   = { fg = c.git.add },
-    diffRemoved                 = { fg = c.git.delete },
-    diffChanged                 = { fg = c.git.change },
-    diffOldFile                 = { fg = c.yellow },
-    diffNewFile                 = { fg = c.orange },
-    diffFile                    = { fg = c.blue },
-    diffLine                    = { fg = c.comment },
-    diffIndexLine               = { fg = c.magenta },
-    helpExample                 = { fg = c.comment },
-  }
+        -- diff (not needed anymore?)
+        diffAdded                   = { fg = c.success },
+        diffRemoved                 = { fg = c.error },
+        diffChanged                 = { fg = c.info },
+        diffOldFile                 = { fg = c.hint },
+        diffNewFile                 = { fg = c.warning },
+        diffFile                    = { fg = c.background_light },
+        diffLine                    = { fg = c.comment },
+        diffIndexLine               = { fg = c.magenta },
+        helpExample                 = { fg = c.comment },
+    }
 end
 
 return M

@@ -1,0 +1,1 @@
+require("kore-old").load()
