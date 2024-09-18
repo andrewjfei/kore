@@ -33,8 +33,8 @@ function M.setup(colors, opts)
 	local groups = {
 		base = true,
 		-- kinds = true,
-		-- ["semantic-tokens"] = true,
 		treesitter = true,
+		lsp = true,
 	}
 
     -- enable highlight groups for all plugins

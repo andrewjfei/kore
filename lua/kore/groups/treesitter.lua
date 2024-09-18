@@ -26,7 +26,7 @@ function M.get(c, opts)
         -- ["@diff.minus"]                 = "DiffDelete",
         -- ["@diff.plus"]                  = "DiffAdd",
         ["@function"]             = "Function", -- function names
-        -- ["@function.builtin"]           = "Function",
+        ["@function.builtin"]     = "Keyword",  -- built in language functions
         -- ["@function.call"]              = "@function",
         -- ["@function.macro"]             = "Macro",
         ["@function.method"]      = "Function", -- function method calls
@@ -97,10 +97,10 @@ function M.get(c, opts)
         -- ["@variable.parameter.builtin"] = "MoreMsg", -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
     }
 
-	-- for i, color in ipairs(c.rainbow) do
-	--   ret["@markup.heading." .. i .. ".markdown"] = { fg = color, bold = true }
-	-- end
-	return ret
+    -- for i, color in ipairs(c.rainbow) do
+    --   ret["@markup.heading." .. i .. ".markdown"] = { fg = color, bold = true }
+    -- end
+    return ret
 end
 
 return M
