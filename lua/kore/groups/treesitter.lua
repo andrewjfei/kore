@@ -13,7 +13,7 @@ function M.get(c, opts)
         ["@character.special"]     = "Keyword", -- special characters (i.e. '*' in .gitignore)
 
         ["@comment"]               = "Comment",
-        ["@comment.documentation"] = { fg = c.foreground_dark },
+        ["@comment.documentation"] = "Comment",
         -- ["@comment.error"]              = { fg = c.error },
         -- ["@comment.hint"]               = { fg = c.hint },
         -- ["@comment.info"]               = { fg = c.info },

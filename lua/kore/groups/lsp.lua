@@ -6,7 +6,7 @@ function M.get(c)
     return {
         -- ["@lsp.type.boolean"]                      = "String",
         -- ["@lsp.type.builtinType"]                  = "@type.builtin",
-        -- ["@lsp.type.comment"]                      = "@comment",
+        ["@lsp.type.comment"]                      = "@comment",
         -- ["@lsp.type.decorator"]                    = "@attribute",
         -- ["@lsp.type.deriveHelper"]                 = "@attribute",
         -- ["@lsp.type.enum"]                         = "@type",

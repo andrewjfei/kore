@@ -3,7 +3,7 @@
 
 ---@alias kore.Highlights table<string, kore.Highlight | string>
 
----@alias kore.HighlightsFn fun(colors: ColorScheme, opts: kore.Config): kore.Highlights
+---@alias kore.HighlightsFn fun(colors: Colours): kore.Highlights
 
 ---@class kore.Cache
 ---@field groups kore.Highlights

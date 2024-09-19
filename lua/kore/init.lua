@@ -1,20 +1,12 @@
-local config = require("kore.config")
+local Kore = {}
 
-local M = {}
-
----@type {light?: string, dark?: string}
-M.styles = {}
-
-function M.load(opts)
-    opts = require("kore.config").extend(opts)
-
-    local style_bg = "dark" -- can be light or dark
-
-    vim.o.background = style_bg
-    M.styles[vim.o.background] = opts.style
-    return require("kore.theme").setup(opts)
+function Kore.load()
+	require("kore.theme").setup()
 end
 
-M.setup = config.setup
+--- setup initial configuration options
+function Kore.setup(opts)
+    require("kore.config").setup(opts)
+end
 
-return M
+return Kore

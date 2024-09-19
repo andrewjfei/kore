@@ -1,9 +1,10 @@
 local M = {}
 
----@type kore.HighlightsFn
-function M.get(c, opts)
+--- @param c Colours
+function M.get(c)
     -- stylua: ignore
     return {
+        -- vim
         Comment                     = { fg = c.comment },                                    -- comment
         ColorColumn                 = { bg = c.primary },                                    -- column colour used for ruler, etc.
         -- Conceal                     = "EndOfBuffer",                                             -- placeholder characters substituted for concealed text (i.e. markdown)
@@ -75,14 +76,14 @@ function M.get(c, opts)
         Constant                    = { fg = c.quinary },    -- constants (i.e. numbers, booleans, etc.)
         -- Debug                       = { fg = c.red },                                            -- debugging statements
         Delimiter                   = "Identifier",          -- character that needs attention
-        Error                       = { fg = c.septenary },                                         -- error
+        Error                       = { fg = c.septenary },  -- error
         Float                       = "Constant",            -- decimals (i.e. doubles, floats, etc.)
         Function                    = { fg = c.secondary },  -- function and methods
         Identifier                  = { fg = c.foreground }, -- variable
         -- Italic                      = { italic = true, fg = c.fg },                              -- italic text
         Keyword                     = { fg = c.primary },    -- keywords
         Number                      = "Constant",            -- integers
-        Operator                    = "Keyword",    -- operators (i.e. "+", "*", etc.)
+        Operator                    = "Keyword",             -- operators (i.e. "+", "*", etc.)
         -- PreProc                     = { fg = c.senary },                                         -- preprocessors
         -- Special                     = "SpecialKey",                                              -- special symbols
         -- Statement                   = "SpecialKey",                                              -- statements
