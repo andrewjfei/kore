@@ -76,8 +76,9 @@ function M.get(c, opts)
         -- ["@markup.strikethrough"]       = { strikethrough = true },
         -- ["@markup.strong"]              = { bold = true },
         -- ["@markup.underline"]           = { underline = true },
+
         -- ["@module"]                     = "Include",
-        -- ["@module.builtin"]             = "MoreMsg", -- Variable names that are defined by the languages, like `this` or `self`.
+        ["@module.builtin"]        = { fg = c.septenary }, -- variable names deifned by the langauge (i.e. "this", "self", etc.)
 
         -- ["@namespace.builtin"]          = "Special",
 
@@ -116,10 +117,13 @@ function M.get(c, opts)
         -- ["@type.qualifier"]             = "@keyword",
 
         ["@variable"]              = "Identifier",         -- general variables
-        ["@variable.builtin"]      = { fg = c.septenary }, -- Variable names that are defined by the languages, like `this` or `self`.
+        ["@variable.builtin"]      = { fg = c.septenary }, -- variable names deifned by the langauge (i.e. "this", "self", etc.)
         ["@variable.member"]       = "Identifier",         -- class fields
         ["@variable.parameter"]    = "Identifier",         -- function parameters
         -- ["@variable.parameter.builtin"] = "MoreMsg", -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
+
+        -- lua overrides
+        ["@constant.lua"]          = "Identifier",
     }
 	return ret
 end
