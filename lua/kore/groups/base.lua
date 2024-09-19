@@ -69,18 +69,20 @@ function M.get(c, opts)
         -- WinBar                      = "StatusLine",                                              -- window bar
         -- WinBarNC                    = "StatusLineNC",                                            -- window bar in non-current window
 
-        -- Boolean                     = { fg = c.quinary },                                            -- boolean
+        Boolean                     = "Constant",            -- booleans (i.e. true, false)
         -- Bold                        = { fg = c.foreground, bold = true },                        -- bold text
-        Character                   = "String", -- character (i.e. 'c', etc.)
-        -- Constant                    = "ModeMsg",                                                 -- constant
+        Character                   = "String",              -- character (i.e. 'c', etc.)
+        Constant                    = { fg = c.quinary },    -- constants (i.e. numbers, booleans, etc.)
         -- Debug                       = { fg = c.red },                                            -- debugging statements
-        -- Delimiter                   = "SpecialKey",                                              -- character that needs attention
-        -- Error                       = "DiagnosticError",                                         -- error
-        Function                    = { fg = c.secondary }, -- function and methods
-        -- Identifier                  = "ModeMsg",                                                 -- variable
+        Delimiter                   = "Identifier",          -- character that needs attention
+        Error                       = { fg = c.septenary },                                         -- error
+        Float                       = "Constant",            -- decimals (i.e. doubles, floats, etc.)
+        Function                    = { fg = c.secondary },  -- function and methods
+        Identifier                  = { fg = c.foreground }, -- variable
         -- Italic                      = { italic = true, fg = c.fg },                              -- italic text
-        Keyword                     = { fg = c.primary }, -- keywords
-        Operator                    = { fg = c.primary }, -- operators (i.e. "+", "*", etc.)
+        Keyword                     = { fg = c.primary },    -- keywords
+        Number                      = "Constant",            -- integers
+        Operator                    = "Keyword",    -- operators (i.e. "+", "*", etc.)
         -- PreProc                     = { fg = c.senary },                                         -- preprocessors
         -- Special                     = "SpecialKey",                                              -- special symbols
         -- Statement                   = "SpecialKey",                                              -- statements
