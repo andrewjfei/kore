@@ -2,12 +2,13 @@ local Util = require("kore.util")
 
 local Groups = {}
 
+-- stylua: ignore
 Groups.plugins = {
-	-- ["lazy.nvim"]               = "lazy",
-	-- ["nvim-cmp"]                = "cmp",
-	-- ["nvim-treesitter-context"] = "treesitter-context",
-	-- ["telescope.nvim"]          = "telescope",
-	-- ["which-key.nvim"]          = "which-key",
+    ["lazy.nvim"]      = "lazy",
+    ["nvim-cmp"]       = "cmp",
+    -- ["nvim-treesitter-context"] = "treesitter-context",
+    ["telescope.nvim"] = "telescope",
+    -- ["which-key.nvim"]          = "which-key",
 }
 
 function Groups.get(name, colours)

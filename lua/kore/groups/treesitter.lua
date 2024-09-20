@@ -1,7 +1,7 @@
-local M = {}
+local Treesitter = {}
 
----@type kore.HighlightsFn
-function M.get(c, opts)
+---@param c Colours
+function Treesitter.get(c)
     -- stylua: ignore
     local ret = {
         -- ["@annotation"]                 = "PreProc",
@@ -53,7 +53,7 @@ function M.get(c, opts)
         ["@keyword.repeat"]        = "Keyword", -- repeat keywords (i.e. for, while, etc.)
         ["@keyword.return"]        = "Keyword", -- return keyword
         -- ["@keyword.storage"]            = "StorageClass",
-        ["@keyowrd.type"]          = "Keyword", -- type keywords (i.e. class, etc.)
+        ["@keyword.type"]          = "Keyword", -- type keywords (i.e. class, etc.)
 
         -- ["@label"]                      = { fg = c.red }, -- For labels: `label:` in C and `:label:` in Lua.
         -- ["@markup"]                     = "@none",
@@ -63,26 +63,29 @@ function M.get(c, opts)
         -- ["@markup.heading"]             = "Title",
         -- ["@markup.italic"]              = { italic = true },
         -- ["@markup.link"]                = { fg = c.red },
-        -- ["@markup.link.label"]          = "SpecialChar",
+        ["@markup.link.label"]     = "Keyword",
         -- ["@markup.link.label.symbol"]   = "Identifier",
-        -- ["@markup.link.url"]            = "Underlined",
-        -- ["@markup.list"]                = { fg = c.red }, -- For special punctutation that does not fall in the categories before.
+        ["@markup.link.url"]       = { fg = c.tertiary, underline = true },
+        ["@markup.list"]           = "Keyword", -- For special punctutation that does not fall in the categories before.
         -- ["@markup.list.checked"]        = "MoreMsg", -- For brackets and parens.
         -- ["@markup.list.markdown"]       = { fg = c.orange, bold = true },
         -- ["@markup.list.unchecked"]      = "MoreMsg", -- For brackets and parens.
         -- ["@markup.math"]                = "Special",
-        -- ["@markup.raw"]                 = "String",
+        ["@markup.raw"]            = { fg = c.septenary },
+        ["@markup.raw.block"]      = "Comment",
         -- ["@markup.raw.markdown_inline"] = { bg = c.terminal_black, fg = c.blue },
-        -- ["@markup.strikethrough"]       = { strikethrough = true },
-        -- ["@markup.strong"]              = { bold = true },
-        -- ["@markup.underline"]           = { underline = true },
+        ["@markup.strikethrough"]  = { strikethrough = true },
+        ["@markup.strong"]         = "Bold",
+        ["@markup.underline"]      = "Underlined",
 
-        -- ["@module"]                     = "Include",
+        ["@module"]                     = "Keyword",
         ["@module.builtin"]        = { fg = c.septenary }, -- variable names deifned by the langauge (i.e. "this", "self", etc.)
 
         -- ["@namespace.builtin"]          = "Special",
 
         -- ["@none"]                       = {},
+
+        -- ["@nospell"]               = { fg = c.septenary },
 
         ["@number"]                = "Number",
         ["@number.float"]          = "Float",
@@ -93,7 +96,7 @@ function M.get(c, opts)
 
         ["@punctuation.bracket"]   = "Delimiter",       -- brackets and parenthesis (i.e. "[", "{", "(", etc.)
         ["@punctuation.delimiter"] = "Delimiter",       -- delimiters (i.e: ".")
-        ["@punctuation.special"]   = { fg = c.senary }, -- special puncation (i.e. `${}` for template literals)
+        ["@punctuation.special"]   = { fg = c.septenary }, -- special puncation (i.e. `${}` for template literals)
 
         ["@spell"]                 = "Comment",
 
@@ -104,7 +107,7 @@ function M.get(c, opts)
         ["@string.special"]        = "Identifier",         -- special strings (i.e. .gitignore paths)
 
         ["@tag"]                   = "Keyword",
-        ["@tag.attribute"]         = { fg = c.senary },
+        ["@tag.attribute"]         = "Identifier",
         ["@tag.builtin"]           = "Keyword",
         ["@tag.delimiter"]         = "Keyword",
         -- ["@tag.delimiter.tsx"]          = "Delimiter",
@@ -124,8 +127,11 @@ function M.get(c, opts)
 
         -- lua overrides
         ["@constant.lua"]          = "Identifier",
+
+        -- markdown overrides
+        ["@spell.markdown"]        = "Identifier"
     }
 	return ret
 end
 
-return M
+return Treesitter
