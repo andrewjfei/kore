@@ -6,8 +6,8 @@ Cmp.url = "https://github.com/hrsh7th/nvim-cmp"
 function Cmp.get(c)
     -- stylua: ignore
     return {
-        CmpItemAbbr              = { fg = c.foreground_dark },
-        CmpItemAbbrDeprecated    = { fg = c.foreground_dark, strikethrough = true },
+        CmpItemAbbr              = { fg = c.foreground },
+        CmpItemAbbrDeprecated    = { fg = c.foreground, strikethrough = true },
         CmpItemAbbrMatch         = "Keyword",
         CmpItemAbbrMatchFuzzy    = "Keyword",
         CmpItemKind              = { fg = c.unknown },
