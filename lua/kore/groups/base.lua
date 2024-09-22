@@ -14,24 +14,24 @@ function Base.get(c)
         CursorColumn                = "CursorLine",                                             -- column of cursor
         CursorLine                  = "CursorLine",                                             -- row/line of cursor
         Directory                   = { fg = c.secondary },                                     -- directory colour
-        DiffAdd                     = { fg = c.background_light, bg = c.success, bold = true }, -- diff added line
-        DiffChange                  = { fg = c.background_light, bg = c.info, bold = true },    -- diff changed line
-        DiffDelete                  = { fg = c.background_light, bg = c.error, bold = true },   -- diff deleted line
-        DiffText                    = { fg = c.background_light, bg = c.comment, bold = true }, -- diff text changed in line
+        DiffAdd                     = { fg = c.background_light, bg = c.success },              -- diff added line
+        DiffChange                  = { fg = c.background_light, bg = c.info },                 -- diff changed line
+        DiffDelete                  = { fg = c.background_light, bg = c.error },                -- diff deleted line
+        DiffText                    = { fg = c.background_light, bg = c.comment },              -- diff text changed in line
         EndOfBuffer                 = { fg = c.buffer },                                        -- filler lines (i.e. ~) in line number column
         ErrorMsg                    = "DiagnosticError",                                        -- error messages in the command line
         VertSplit                   = "SpecialKey",                                             -- line separating split windows
         WinSeparator                = "SpecialKey",                                             -- line separating split windows
-        Folded                      = { fg = c.primary, bg = c.background_light, bold = true }, -- closed folds
+        Folded                      = { fg = c.primary, bg = c.background_light }, -- closed folds
         FoldColumn                  = { fg = c.unknown2, bg = c.unknown },                      -- unsure
         SignColumn                  = "Comment",                                                -- sign column beside line number column
         SignColumnSB                = { fg = c.unknown, bg = c.unknown3 },                      -- sign column beside line number column
-        Substitute                  = { fg = c.background_light, bg = c.primary, bold = true }, -- string which will be substituted/replaced
+        Substitute                  = { fg = c.background_light, bg = c.primary }, -- string which will be substituted/replaced
         LineNr                      = "Comment",                                                -- line number column
         CursorLineNr                = "SpecialKey",                                             -- cursor line number column
         LineNrAbove                 = "LineNr",                                                 -- line numbers above cursor line
         LineNrBelow                 = "LineNr",                                                 -- line numbers below cursor line
-        MatchParen                  = { fg = c.background, bg = c.primary, bold = true },       -- matching parenthesis of parenthesis under cursor
+        MatchParen                  = { fg = c.background, bg = c.primary },       -- matching parenthesis of parenthesis under cursor
         ModeMsg                     = { fg = c.foreground },                                    -- mode messages (i.e. "-- INSERT --")
         MsgArea                     = "ModeMsg",                                                -- messages and command line
         MoreMsg                     = "ModeMsg",                                                -- more message prompt
@@ -48,7 +48,7 @@ function Base.get(c)
         PmenuThumb                  = "VisualNOS",                                               -- popup menu scrollbar thumb
         Question                    = "ModeMsg",                                                 -- question prompts in command line
         -- QuickFixLine                = { bg = c.cyan, bold = true },                              -- unsure
-        Search                      = { fg = c.background_light, bg = c.tertiary, bold = true }, -- unselected searched string
+        Search                      = { fg = c.background_light, bg = c.tertiary }, -- unselected searched string
         IncSearch                   = "Substitute",                                              -- included search string
         CurSearch                   = "IncSearch",                                               -- selected search string
         SpecialKey                  = { fg = c.primary },                                        -- unprintable characters

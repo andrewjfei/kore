@@ -38,33 +38,33 @@ local colours = {
 
 return {
     normal = {
-        a = { bg = colours.orange_normal, fg = colours.dark_normal, gui = 'bold' },
+        a = { bg = colours.orange_normal, fg = colours.dark_normal },
         b = { bg = colours.dark_light, fg = colours.light_normal },
-        c = { bg = colours.dark_normal, fg = colours.light_dark }
+        c = { bg = colours.dark_normal, fg = colours.light_dark },
     },
     insert = {
-        a = { bg = colours.green_normal, fg = colours.dark_normal, gui = 'bold' },
+        a = { bg = colours.green_normal, fg = colours.dark_normal },
         b = { bg = colours.dark_light, fg = colours.light_normal },
-        c = { bg = colours.dark_normal, fg = colours.light_dark }
+        c = { bg = colours.dark_normal, fg = colours.light_dark },
     },
     visual = {
-        a = { bg = colours.cyan_normal, fg = colours.dark_normal, gui = 'bold' },
+        a = { bg = colours.cyan_normal, fg = colours.dark_normal },
         b = { bg = colours.dark_light, fg = colours.light_normal },
-        c = { bg = colours.dark_normal, fg = colours.light_dark }
+        c = { bg = colours.dark_normal, fg = colours.light_dark },
     },
     replace = {
-        a = { bg = colours.red_normal, fg = colours.dark_normal, gui = 'bold' },
+        a = { bg = colours.red_normal, fg = colours.dark_normal },
         b = { bg = colours.dark_light, fg = colours.light_normal },
-        c = { bg = colours.dark_normal, fg = colours.light_dark }
+        c = { bg = colours.dark_normal, fg = colours.light_dark },
     },
     command = {
-        a = { bg = colours.yellow_normal, fg = colours.dark_normal, gui = 'bold' },
+        a = { bg = colours.yellow_normal, fg = colours.dark_normal },
         b = { bg = colours.dark_light, fg = colours.light_normal },
-        c = { bg = colours.dark_normal, fg = colours.light_dark }
+        c = { bg = colours.dark_normal, fg = colours.light_dark },
     },
     inactive = {
-        a = { bg = colours.light_dark, fg = colours.dark_normal, gui = 'bold' },
+        a = { bg = colours.light_dark, fg = colours.dark_normal },
         b = { bg = colours.dark_light, fg = colours.light_normal },
-        c = { bg = colours.dark_normal, fg = colours.light_dark }
-    }
+        c = { bg = colours.dark_normal, fg = colours.light_dark },
+    },
 }
