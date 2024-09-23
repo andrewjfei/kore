@@ -107,7 +107,7 @@ function Treesitter.get(c)
         ["@string.special"]        = "Identifier",         -- special strings (i.e. .gitignore paths)
 
         ["@tag"]                   = "Keyword",
-        ["@tag.attribute"]         = "Identifier",
+        ["@tag.attribute"]         = { fg = c.septenary },
         ["@tag.builtin"]           = "Keyword",
         ["@tag.delimiter"]         = "Keyword",
         -- ["@tag.delimiter.tsx"]          = "Delimiter",
