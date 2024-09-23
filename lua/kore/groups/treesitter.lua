@@ -98,7 +98,7 @@ function Treesitter.get(c)
         ["@punctuation.delimiter"] = "Delimiter",       -- delimiters (i.e: ".")
         ["@punctuation.special"]   = { fg = c.septenary }, -- special puncation (i.e. `${}` for template literals)
 
-        ["@spell"]                 = "Comment",
+        ["@spell"]                 = "Identifier",
 
         ["@string"]                = "String",             -- general strings
         ["@string.documentation"]  = "String",             -- strings in documentation
