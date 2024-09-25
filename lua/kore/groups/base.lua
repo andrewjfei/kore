@@ -5,67 +5,67 @@ function Base.get(c)
     -- stylua: ignore
     return {
         -- vim
-        Comment                     = { fg = c.comment },                                       -- comment
-        ColorColumn                 = { bg = c.primary },                                       -- column colour used for ruler, etc.
-        Conceal                     = "EndOfBuffer",                                            -- placeholder characters substituted for concealed text (i.e. markdown)
-        Cursor                      = { fg = c.background, bg = c.foreground, bold = true },    -- character under cursor
-        lCursor                     = "Cursor",                                                 -- character under cursor
-        CursorIM                    = "Cursor",                                                 -- character under cursor
-        CursorColumn                = "CursorLine",                                             -- column of cursor
-        CursorLine                  = "CursorLine",                                             -- row/line of cursor
-        Directory                   = { fg = c.secondary },                                     -- directory colour
-        DiffAdd                     = { fg = c.background_light, bg = c.success },              -- diff added line
-        DiffChange                  = { fg = c.background_light, bg = c.info },                 -- diff changed line
-        DiffDelete                  = { fg = c.background_light, bg = c.error },                -- diff deleted line
-        DiffText                    = { fg = c.background_light, bg = c.comment },              -- diff text changed in line
-        EndOfBuffer                 = { fg = c.buffer },                                        -- filler lines (i.e. ~) in line number column
-        ErrorMsg                    = "DiagnosticError",                                        -- error messages in the command line
-        VertSplit                   = "SpecialKey",                                             -- line separating split windows
-        WinSeparator                = "SpecialKey",                                             -- line separating split windows
-        Folded                      = { fg = c.primary, bg = c.background_light }, -- closed folds
-        FoldColumn                  = { fg = c.unknown2, bg = c.unknown },                      -- unsure
-        SignColumn                  = "Comment",                                                -- sign column beside line number column
-        SignColumnSB                = { fg = c.unknown, bg = c.unknown3 },                      -- sign column beside line number column
-        Substitute                  = { fg = c.background_light, bg = c.primary }, -- string which will be substituted/replaced
-        LineNr                      = "Comment",                                                -- line number column
-        CursorLineNr                = "SpecialKey",                                             -- cursor line number column
-        LineNrAbove                 = "LineNr",                                                 -- line numbers above cursor line
-        LineNrBelow                 = "LineNr",                                                 -- line numbers below cursor line
-        MatchParen                  = { fg = c.background, bg = c.primary },       -- matching parenthesis of parenthesis under cursor
-        ModeMsg                     = { fg = c.foreground },                                    -- mode messages (i.e. "-- INSERT --")
-        MsgArea                     = "ModeMsg",                                                -- messages and command line
-        MoreMsg                     = "ModeMsg",                                                -- more message prompt
-        NonText                     = "Comment",                                                -- text (i.e. "@@@")
-        Normal                      = { fg = c.foreground, bg = c.background },                 -- normal text
-        NormalNC                    = "Normal",                                                 -- normal text in non-current window
-        NormalSB                    = { fg = c.unknown2 },                                      -- normal text in sidebar
-        NormalFloat                 = { fg = c.foreground, bg = c.background_light },           -- normal text in floating window
+        Comment                     = { fg = c.comment },                                    -- comment
+        ColorColumn                 = { bg = c.primary },                                    -- column colour used for ruler, etc.
+        Conceal                     = "EndOfBuffer",                                         -- placeholder characters substituted for concealed text (i.e. markdown)
+        Cursor                      = { fg = c.background, bg = c.foreground, bold = true }, -- character under cursor
+        lCursor                     = "Cursor",                                              -- character under cursor
+        CursorIM                    = "Cursor",                                              -- character under cursor
+        CursorColumn                = "CursorLine",                                          -- column of cursor
+        CursorLine                  = "CursorLine",                                          -- row/line of cursor
+        Directory                   = { fg = c.secondary },                                  -- directory colour
+        DiffAdd                     = { fg = c.background_light, bg = c.success },           -- diff added line
+        DiffChange                  = { fg = c.background_light, bg = c.info },              -- diff changed line
+        DiffDelete                  = { fg = c.background_light, bg = c.error },             -- diff deleted line
+        DiffText                    = { fg = c.background_light, bg = c.comment },           -- diff text changed in line
+        EndOfBuffer                 = { fg = c.buffer },                                     -- filler lines (i.e. ~) in line number column
+        ErrorMsg                    = "DiagnosticError",                                     -- error messages in the command line
+        VertSplit                   = "SpecialKey",                                          -- line separating split windows
+        WinSeparator                = "SpecialKey",                                          -- line separating split windows
+        Folded                      = { fg = c.primary, bg = c.background_light },           -- closed folds
+        FoldColumn                  = { fg = c.unknown2, bg = c.unknown },                   -- unsure
+        SignColumn                  = "Comment",                                             -- sign column beside line number column
+        SignColumnSB                = { fg = c.unknown, bg = c.unknown3 },                   -- sign column beside line number column
+        Substitute                  = { fg = c.background_light, bg = c.primary },           -- string which will be substituted/replaced
+        LineNr                      = "Comment",                                             -- line number column
+        CursorLineNr                = "SpecialKey",                                          -- cursor line number column
+        LineNrAbove                 = "LineNr",                                              -- line numbers above cursor line
+        LineNrBelow                 = "LineNr",                                              -- line numbers below cursor line
+        MatchParen                  = { fg = c.background, bg = c.primary },                 -- matching parenthesis of parenthesis under cursor
+        ModeMsg                     = { fg = c.foreground },                                 -- mode messages (i.e. "-- INSERT --")
+        MsgArea                     = "ModeMsg",                                             -- messages and command line
+        MoreMsg                     = "ModeMsg",                                             -- more message prompt
+        NonText                     = "Comment",                                             -- text (i.e. "@@@")
+        Normal                      = { fg = c.foreground, bg = c.background },              -- normal text
+        NormalNC                    = "Normal",                                              -- normal text in non-current window
+        NormalSB                    = { fg = c.unknown2 },                                   -- normal text in sidebar
+        NormalFloat                 = { fg = c.foreground, bg = c.background_light },        -- normal text in floating window
         -- FloatBorder                 = { fg = c.magenta, bg = c.cyan },                           -- floating window border
         -- FloatTitle                  = { fg = c.cyan, bg = c.red },                               -- floating window title
-        Pmenu                       = "NormalFloat",                                             -- popup menu item
-        PmenuSel                    = "Substitute",                                              -- popup menu selected item
-        PmenuSbar                   = { bg = c.background_light },                               -- popup menu scrollbar
-        PmenuThumb                  = "VisualNOS",                                               -- popup menu scrollbar thumb
-        Question                    = "ModeMsg",                                                 -- question prompts in command line
+        Pmenu                       = "NormalFloat",                                            -- popup menu item
+        PmenuSel                    = "Substitute",                                             -- popup menu selected item
+        PmenuSbar                   = { bg = c.background_light },                              -- popup menu scrollbar
+        PmenuThumb                  = "VisualNOS",                                              -- popup menu scrollbar thumb
+        Question                    = "ModeMsg",                                                -- question prompts in command line
         -- QuickFixLine                = { bg = c.cyan, bold = true },                              -- unsure
-        Search                      = { fg = c.background_light, bg = c.tertiary }, -- unselected searched string
-        IncSearch                   = "Substitute",                                              -- included search string
-        CurSearch                   = "IncSearch",                                               -- selected search string
-        SpecialKey                  = { fg = c.primary },                                        -- unprintable characters
-        SpellBad                    = { sp = c.error, undercurl = true },                        -- unrecognised word
-        SpellCap                    = { sp = c.warning, undercurl = true },                      -- incorrect word capitalisation
-        SpellLocal                  = { sp = c.info, undercurl = true },                         -- word recognised as used by another region
-        SpellRare                   = { sp = c.hint, undercurl = true },                         -- word that is rarely used
-        StatusLine                  = { fg = c.background_light, bg = c.primary, bold = true },  -- status line of current window
-        StatusLineNC                = { fg = c.background_light, bg = c.comment, bold = true },  -- status line of not-current window
-        TabLine                     = { fg = c.comment, bg = c.background },                     -- inactive tab label
-        TabLineFill                 = { bg = c.background },                                     -- tab area background (i.e. where there are no tabs)
-        TabLineSel                  = { fg = c.background_light, bg = c.primary, bold = true },  -- active tab label
-        Title                       = { fg = c.primary, bold = true },                           -- output titles
-        Visual                      = { bg = c.buffer },                                         -- visual mode selection
+        Search                      = { fg = c.background_light, bg = c.tertiary },             -- unselected searched string
+        IncSearch                   = "Substitute",                                             -- included search string
+        CurSearch                   = "IncSearch",                                              -- selected search string
+        SpecialKey                  = { fg = c.primary },                                       -- unprintable characters
+        SpellBad                    = { sp = c.error, undercurl = true },                       -- unrecognised word
+        SpellCap                    = { sp = c.warning, undercurl = true },                     -- incorrect word capitalisation
+        SpellLocal                  = { sp = c.info, undercurl = true },                        -- word recognised as used by another region
+        SpellRare                   = { sp = c.hint, undercurl = true },                        -- word that is rarely used
+        StatusLine                  = { fg = c.background_light, bg = c.primary, bold = true }, -- status line of current window
+        StatusLineNC                = { fg = c.background_light, bg = c.comment, bold = true }, -- status line of not-current window
+        TabLine                     = { fg = c.comment, bg = c.background },                    -- inactive tab label
+        TabLineFill                 = { bg = c.background },                                    -- tab area background (i.e. where there are no tabs)
+        TabLineSel                  = { fg = c.background_light, bg = c.primary, bold = true }, -- active tab label
+        Title                       = { fg = c.primary, bold = true },                          -- output titles
+        Visual                      = { bg = c.buffer },                                        -- visual mode selection
         -- VisualNOS                   = { bg = c.comment },                                        -- unowned visual mode selection
-        WarningMsg                  = { fg = c.warning },                                        -- warning message
-        Whitespace                  = { fg = c.background_light },                               -- whitespace characters
+        WarningMsg                  = { fg = c.warning },                                       -- warning message
+        Whitespace                  = { fg = c.background_light },                              -- whitespace characters
         -- WildMenu                    = { bg = c.magenta },                                        -- wild menu match
         -- WinBar                      = "StatusLine",                                              -- window bar
         -- WinBarNC                    = "StatusLineNC",                                            -- window bar in non-current window
@@ -135,6 +135,11 @@ function Base.get(c)
         -- healthError                 = { fg = c.error },
         -- healthSuccess               = { fg = c.success },
         -- healthWarning               = { fg = c.warning },
+
+        -- diff
+        diffAdded                   = { fg = c.success },
+        diffRemoved                 = { fg = c.error },
+        diffChanged                 = { fg = c.info },
     }
 end
 
